@@ -1,0 +1,95 @@
+/* CONTAINERUL PRINCIPAL (Forma barei de meniu) */
+.custom-navbar {
+    background-color: #2c2c2c; /* coloreaza bara in gri */
+    border-radius: 50px;         /* capetele rotunde ale navbar */
+    padding: 10px 30px;          /* Spatiul gol pe dinauntru: 10px sus-jos, 30px in laterale */
+    display: flex;               /* Leaga toate butoanele impreuna si le pune sa stea pe acelasi rand orizontal */
+    justify-content: center;     /* Impinge toata butoanele fix pe centrul barei (stanga-dreapta) */
+    list-style: none;            /* Ascunde bulinele negre, default de la liste */
+    margin: 0 auto;              /* Ia toata bara si o centreaza perfect pe mijlocul ecranului */
+}
+
+/* LINIA DE DESPARTIRE DINTRE BUTOANE */
+.custom-navbar li {
+    border-right: 1px solid #555; /* Trage o dunga subtire in partea dreapta a fiecarui buton, ca sa le separe */
+}
+
+/* ULTIMUL BUTON DIN LISTA */
+.custom-navbar li:last-child {
+    border-right: none; /* Ii zice ultimului buton:tu nu primi dunga in dreapta */
+}
+
+/* STILUL TEXTULUI SI AL LINK-URILOR (Butoanele in sine) */
+.custom-navbar a {
+    color: gold;             /* Coloreaza literele in acel galben-auriu de cinema */
+    text-decoration: none;     /* Scoate dunga aia albastra, urata, care apare mereu sub link-uri */
+    text-align: center;        /* Forteaza literele sa stea pe centrul cutiei lor */
+    padding: 1px 70px;         /* Lasa spatiu in jurul cuvintelor: un pic sus-jos si mai mult stanga-dreapta*/
+    font-weight: bold;         /* Ingroasa textul ca sa iasa in evidenta */
+    transition: 0.3s;          /* Face ca schimbarea de culoare la hover sa fie fina (dureaza 0.3 secunde) */
+    
+    /* SECTIUNEA PENTRU CENTRAREA TEXTULUI */
+    display: flex;             /* Il transforma intr-o "cutie inteligenta" care stie sa isi alinieze continutul */
+    align-items: center;       /* impinge textul fix la mijloc, pe verticala (sus-jos) */
+    height: 100%;              /* Ii zice link-ului sa se intinda si sa ocupe toata inaltimea posibila din interiorul barei */
+}
+
+/* EFECTUL CAND PUI MOUSE-UL PE BUTON (Hover) */
+.custom-navbar a:hover{
+    color: white;              /* Cand pui mouse-ul pe el, textul galben devine alb */
+    background-color: #444;    /* In spatele literelor apare acel fundal gri deschis */
+    border-radius: 50px;         /* Face ca colturile butoanelor sa fie rotunde */
+}
+
+/* IMAGINEA LOGO-ULUI */
+.navbar-logo img {
+    height: 60px;              /* Fixeaza inaltimea pozei */
+    width: auto;               /* Lasa latimea sa se adapteze singura ca sa nu arate turtita poza */
+    border-radius: 50%;        /* Decupeaza marginile pozei */
+}
+
+/* Containerul pentru elementul din lista */
+.search-item {
+    margin: 0 15px; /* Spatiu stanga-dreapta in navbar */
+    display: flex;
+    align-items: center;
+}
+
+/* Caseta de cautare propriu-zisa */
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #1a1a1a; /* Un gri aproape negru */
+    border: 1px solid #444;    /* Margine discreta */
+    border-radius: 20px;       /* Forma rotunjita la capete */
+    padding: 5px 15px;
+    transition: 0.3s;          /* Animatie pentru focus */
+}
+
+/* Stilul pentru textul introdus */
+.search-box input {
+    background: transparent;   /* Fara fundal propriu */
+    border: none;              /* Fara margini */
+    color: white;              /* Text alb */
+    outline: none;             /* Scoatem conturul albastru de la browser */
+    font-size: 14px;
+    width: 150px;              /* Latimea barii */
+    padding: 5px;
+}
+
+/* Stilul pentru lupa (buton) */
+.search-box button {
+    background: transparent;
+    border: none;
+    color: #ffc107;            /* Lupa aurie */
+    cursor: default;           /* Momentan e doar de design */
+    font-size: 16px;
+    padding: 0;
+}
+
+/* EFECTUL DE FOCUS: Cand dai click sa scrii, se aprinde marginea in auriu */
+.search-box:focus-within {
+    border-color: #ffc107;
+    box-shadow: 0 0 8px rgba(255, 193, 7, 0.4);
+    width: 180px;              /* Optional: bara se lungeste putin cand e activa */
+}

@@ -1,0 +1,168 @@
+/* STRUCTURA DE BAZA A PAGINII */
+body {
+    background-color: gold;    
+
+    display: flex;             /* Pregateste pagina pentru asezarea inteligenta a elementelor */
+    flex-direction: column;    /* Pune elementele (navbar, lista, footer) unul sub altul pe verticala */
+    min-height: 100vh;         /* Intinde pagina pana jos de tot */
+}
+
+/* Cutia mare care tine tot continutul */
+.movie-details-container {
+    max-width: 1000px;           /* Limiteaza latimea ca sa nu se "intinda" textul prea mult pe ecrane mari */
+    margin: 60px auto;           /* O centreaza si lasa 60px spatiu fata de navbar-ul de sus */
+    background-color: #2c2c2c; /* Gri-ul inchis semnatura al site-ului tau */
+    border: 1px solid #444;    /* Contur fin pentru definitie */
+    border-radius: 20px;         /* Rotunjire eleganta a colturilor cutiei principale */
+    padding: 40px;               /* Spatiu interior generos ca elementele sa nu para inghesuite */
+    display: flex;               /* Pune cele doua coloane (poster si info) una langa alta */
+    gap: 50px;                   /* Distanta clara de 50px intre poster si text */
+    align-items: flex-start;     /* Aliniaza ambele coloane la acelasi nivel sus */
+}
+
+/* Coloana stanga: Zona posterului */
+.details-poster img {
+    width: 350px;                               /* Latime fixa pentru poster ca sa pastram proportiile designului */
+    border-radius: 15px;                        /* Rotunjeste colturile pozei ca sa se asorteze cu restul site-ului */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);  /* Umbra densa care face posterul sa para "3D", iesit in relief */
+}
+
+/* Coloana dreapta: Zona cu informatii scrise */
+.details-info {
+    flex: 1;                   /* Ii zice coloanei sa "muste" din tot spatiul ramas liber langa poster */
+    text-align: left;          /* Aliniere clasica la stanga pentru citire usoara */
+}
+
+/* Titlul principal al filmului */
+.details-title {
+    color: white;            
+    font-size: 42px;         
+    margin: 0 0 15px 0;        /* Doar putin spatiu sub titlu */
+}
+
+/* Randul cu datele tehnice (An, Durata, Gen, Nota) */
+.details-meta {
+    display: flex;                    /* Asaza micile detalii in linie orizontala */
+    gap: 20px;                        /* Spatiu de 20px intre fiecare informatie (ex: intre an si durata) */
+    margin-bottom: 30px;              /* Distanta pana la sinopsis */
+    padding-bottom: 20px;             /* Spatiu deasupra liniei despartitoare */
+    border-bottom: 1px solid #444;  /* Linia orizontala gri care separa "buletinul" filmului de descriere */
+}
+
+/* Elementele individuale din meta (An, Durata, etc.) */
+.meta-item {
+    color: #ccc;             /* Gri deschis pentru datele mai putin importante */
+    font-size: 16px;           /* Dimensiune standard de citire */
+}
+
+/* Scorul/Nota filmului */
+.meta-rating {
+    color: #ffc107;          
+    font-weight: bold;         
+    font-size: 18px;          
+}
+
+/* Titlurile de sectiuni (Synopsis, Cast, etc.) */
+.details-subtitle {
+    color: #ffc107;          /* Auriu pentru subtitluri, creeaza o ierarhie vizuala */
+    font-size: 20px;           /* Mai mic decat titlul mare, dar mai mare decat restul textului */
+    margin-bottom: 10px;       /* Spatiu pana la textul descrierii */
+}
+
+/* Textul povestii/sinopsisului */
+.details-synopsis {
+    color: #ddd;              
+    font-size: 16px;
+    line-height: 1.6;          /* face paragraful mult mai usor de urmarit */
+    margin-bottom: 30px;       /* Spatiu pana la sectiunea de credite (regizori/actori) */
+}
+
+/* Paragrafele cu Regizor si Actori */
+.details-credits p {
+    color: #ccc;
+    font-size: 16px;
+    margin: 5px 0;             /* Distanta mica intre randuri ca sa fie compacte */
+}
+
+/* Etichetele (Director:, Stars:) */
+.details-credits strong {
+    color: white;             
+}
+
+/* Cutia butoanelor de actiune */
+.details-actions {
+    display: flex;             /* Pune butoanele unul langa altul */
+    gap: 20px;                 /* Distanta intre butoane */
+    margin-top: 40px;          /* Le impinge spre baza cutiei, departe de text */
+}
+
+/* Butoanele de actiune (Add Watchlist) */
+.btn-vezi {
+    background-color: transparent; /* Fundal gol (contur stilat) */
+    color: #ffc107;              /* Text auriu */
+    border: 2px solid #ffc107;   /* Rama aurie groasa de 2px */
+    padding: 8px 20px;             /* Le face usor de apasat */
+    text-decoration: none;         /* Scoate dunga de link */
+    border-radius: 20px;           /* Forma rotunda la capete */
+    font-weight: bold;             /* Text puternic */
+    transition: 0.3s;              /* Animatie fina la hover */
+}
+
+/* Efectul de hover pe butoane */
+.btn-vezi:hover {
+    background-color: #ffc107; /* Butonul se umple complet cu auriu la atingere */
+    color: black;              /* Textul devine negru pentru contrast pe auriu */
+}
+
+/* SISTEMUL DE VOT CU STELE */
+
+.user-vote-section {
+    display: flex;                                   /* Pune textul si stelele pe acelasi rand */
+    align-items: center;                             /* Le centreaza frumos pe inaltime */
+    gap: 15px;                                       /* Lasa spatiu intre text si stele */
+    margin-bottom: 10px;                             /* Distanta pana la sectiunea Synopsis */
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.05);   /* Un fundal foarte transparent ca o caseta subtila */
+    border-radius: 10px;                             /* Colturi rotunde pentru caseta */
+    display: inline-flex;                            /* Caseta va fi doar cat e de lung continutul ei, nu tot randul */
+}
+
+.vote-text {
+    color: #ccc;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Containerul care tine efectiv stelele */
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse; /* Intoarce ordinea vizuala, le citeste de la dreapta la stanga */
+    justify-content: flex-end;
+}
+
+.star {
+    font-size: 26px;           /* Marimea stelelor */
+    color: #555;             /* Culoarea default: gri inchis (stea goala) */
+    cursor: pointer;           /* Cursorul devine manuta */
+    transition: color 0.2s;    /* Tranzitie lina la schimbarea culorii */
+    padding: 0 2px;
+}
+
+/* Cum functioneaza hover-ul:
+   Datorita 'row-reverse', cand pui mouse-ul pe o stea, selectorul de mai jos 
+   coloreaza steaua curenta SI toate stelele "din fata" ei din codul HTML.
+*/
+.star:hover,
+.star:hover ~ .star {
+    color: #ffc107;                                 /* Se aprind in auriu */
+    text-shadow: 0 0 10px rgba(255, 193, 7, 0.4);   /* O mica stralucire in spate */
+}
+
+/* FOOTER-UL (Banda de jos) */
+footer {
+    background-color: #2c2c2c; /* Gri inchis, la fel ca navbar-ul si cardurile */
+    color: #777;               
+    text-align: center;          
+    margin-top: auto;            /* Impinge footer-ul la baza ecranului chiar daca lista e scurta */
+    border-radius: 50px;       
+}

@@ -1,0 +1,97 @@
+/* STRUCTURA DE BAZA A PAGINII */
+body {
+    background-color: gold;    
+
+    display: flex;             /* Pregateste pagina pentru asezarea inteligenta a elementelor */
+    flex-direction: column;    /* Pune elementele (navbar, lista, footer) unul sub altul pe verticala */
+    min-height: 100vh;         /* Intinde pagina pana jos de tot */
+}
+
+/* CONTAINERUL PENTRU LISTA DE FILME */
+.movie-list {
+    display: flex;             /* Activeaza sistemul Flexbox pentru lista */
+    flex-direction: column;    /* Fortam filmele sa stea unul sub altul, ca niste randuri */
+    gap: 20px;                 /* Lasa un spatiu de 20px intre randurile de filme */
+    max-width: 900px;          /* Nu lasa lista sa se lateasca prea mult pe ecrane mari */
+    margin: 20px auto;         /* Centraza lista pe mijloc si o departeaza putin de navbar */
+}
+
+/* RANDUL INDIVIDUAL (Fiecare film in parte) */
+.movie-list-item {
+    background-color: #2c2c2c;      /* Fundalul gri inchis */
+    border: 10px solid #2c2c2c;     /* Un contur subtire ca sa se vada unde incepe si unde se termina filmul */
+    border-radius: 10px;              /* Rotunjeste colturile */
+    padding: 15px;                    /* Spatiu gol in interiorul benzii */
+    display: flex;                    /* Pune poza, textele si butonul pe acelasi rand orizontal */
+    align-items: center;              /* Aliniaza totul perfect pe mijlocul orizontalei (sa nu stea butonul mai sus decat poza) */
+    transition: 0.3s;                 /* Timpul animatiei cand interactionezi cu mouse-ul */
+}
+
+/* Efectul de hover pe toata banda filmului */
+.movie-list-item:hover {
+    border-color: #ffc107;      /* Cand pui mouse-ul, conturul gri devine auriu */
+    transform: translateX(10px);  /* Misca toata banda 10 pixeli la dreapta (efect de meniu interactiv) */
+}
+
+/* POZA FILMULUI (In stanga) */
+.movie-list-item img {
+    width: 120px;              /* Fixeaza latimea pozei */
+    height: 180px;             /* Fixeaza inaltimea pozei */
+    object-fit: cover;         /* Taie din poza daca nu are formatul corect, fara sa o turteasca */
+    border-radius: 5px;        /* Rotunjeste foarte putin colturile pozei */
+    margin-right: 25px;        /* Impinge textul la dreapta ca sa nu stea lipit de poza */
+}
+
+/* ZONA CU TEXT (Mijlocul benzii) */
+.movie-info {
+    flex-grow: 1;              /*  Textul ocupa tot spatiul liber pana la buton */
+    text-align: left;          /* Aliniaza textele la stanga  */
+}
+
+.movie-info h3 {
+    color: white;            /* Titlul filmului este alb */
+    margin: 0 0 10px 0;        /* Lasa putin spatiu doar sub titlu */
+    font-size: 24px;
+}
+
+.movie-meta {
+    color: #ffc107;          /* Anul si Nota sunt aurii pentru a sari in ochi imediat */
+    font-weight: bold;         /* Text ingrosat */
+    margin: 0 0 10px 0;        /* Lasa spatiu sub nota, inainte de descriere */
+}
+
+.movie-desc {
+    color: #ccc;             /* Descrierea e gri deschis */
+    font-size: 15px;
+    margin: 0;
+    padding-right: 20px;       /* Nu lasa textul sa se lipeasca de butonul din dreapta */
+    line-height: 1.4;          /* Lasa spatiu intre randurile de text (sa fie usor de citit) */
+}
+
+/* BUTONUL DIN DREAPTA ("View Details") */
+.btn-vezi {
+    background-color: transparent; /* Fundal gol (contur stilat) */
+    color: #ffc107;              /* Text auriu */
+    border: 2px solid #ffc107;   /* Rama aurie groasa de 2px */
+    padding: 8px 20px;             /* Le face usor de apasat */
+    text-decoration: none;         /* Scoate dunga de link */
+    border-radius: 20px;           /* Forma rotunda la capete */
+    font-weight: bold;             /* Text puternic */
+    white-space: nowrap;
+    transition: 0.3s;              /* Animatie fina la hover */
+}
+
+/* Efectul de hover pe butoane */
+.btn-vezi:hover {
+    background-color: #ffc107; /* Butonul se umple complet cu auriu la atingere */
+    color: black;              /* Textul devine negru pentru contrast pe auriu */
+}
+
+/* FOOTER-UL (Banda de jos) */
+footer {
+    background-color: #2c2c2c; /* Gri inchis, la fel ca navbar-ul si cardurile */
+    color: #777;               
+    text-align: center;          
+    margin-top: auto;            /* Impinge footer-ul la baza ecranului chiar daca lista e scurta */
+    border-radius: 50px;       
+}

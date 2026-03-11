@@ -1,0 +1,176 @@
+/* STRUCTURA DE BAZA A PAGINII */
+body {
+    background-color: gold;    
+
+    display: flex;             /* Pregateste pagina pentru asezarea inteligenta a elementelor */
+    flex-direction: column;    /* Pune elementele (navbar, lista, footer) unul sub altul pe verticala */
+    min-height: 100vh;         /* Intinde pagina pana jos de tot */
+}
+
+/* CONTAINERUL GENERAL (Cutia mare centrala) */
+.comments-page-wrapper {
+    max-width: 900px;             /* Latimea maxima de 900px  */
+    margin: 60px auto;            /* Centram caseta si o distantam la 60px de la navbar */
+    background-color: #2c2c2c;  
+    border-radius: 20px;          /* Colturile cutiei mari sunt rotunjite */
+    padding: 40px;                /* Spatiu interior generos pentru a "aerisi" continutul */
+    border: 1px solid #444;     /* O linie subtire si discreta pe margini */
+}
+
+/* ANTETUL FILMULUI (Zona de sus cu posterul mic) */
+.movie-reference {
+    display: flex;                    /* Punem posterul micut langa textul "User Reviews for:" */
+    align-items: center;              /* Le aliniem perfect pe mijloc (vertical) */
+    gap: 25px;                        /* Lasa un spatiu de 25px intre poster si text */
+    border-bottom: 1px solid #444;  /* Linia care separa antetul de zona unde se scrie comentariul */
+    padding-bottom: 25px;             /* Spatiul de deasupra liniei separatoare */
+    margin-bottom: 30px;              /* Spatiul de sub linia separatoare */
+}
+
+/* Posterul in miniatura */
+.tiny-poster {
+    width: 80px;                                /* Am folosit un poster foarte mic doar pentru context vizual */
+    border-radius: 8px;                         /* Rotunjim putin colturile pozei */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);   /* Efect vizual de umbra sa iasa in relief */
+}
+
+/* Textul cu titlul filmului */
+.movie-ref-info h2 {
+    color: white;            
+    margin: 0 0 10px 0;        /* Putin spatiu sub titlu, inainte de butonul "Back" */
+    font-size: 28px;           /* Titlu moderat */
+}
+
+/* Titlul exact al filmului */
+.movie-ref-info h2 span {
+    color: #ffc107;            /* Scoatem in evidenta titlul filmului folosind culoarea aurie */
+}
+
+/* Link-ul de intoarcere la detaliile filmului */
+.back-link {
+    color: #ccc;             /* Un gri discret */
+    text-decoration: none;     /* Scoatem dunga implicita de la link-uri */
+    font-size: 15px;
+    transition: 0.3s;          /* Timpul in care are loc schimbarea de culoare cand pui mouse-ul */
+}
+
+/* Efectul hover pe link-ul de intoarcere */
+.back-link:hover {
+    color: #ffc107;            /* Cand pui mouse-ul pe el, devine auriu */
+}
+
+/* CASETA DE ADAUGARE COMENTARIU  */
+.add-review-section {
+    margin-bottom: 50px;       /* Distanta pana la lista efectiva de comentarii de dedesubt */
+}
+
+/* Cutia in care scrie utilizatorul */
+.add-review-section textarea {
+    width: 100%;                  /* Cutia ocupa toata latimea disponibila in container */
+    height: 120px;                /* Inaltimea de baza, ofera loc pentru vreo 4-5 randuri de text */
+    background-color: #1a1a1a;  /* Un gri aproape negru, pentru a da un efect de "gaura" sau "adancitura" */
+    border: 1px solid #555;     /* Contur fin */
+    border-radius: 12px;          /* Colturi rotunjite */
+    padding: 15px;                /* Textul pe care il tastezi nu va sta lipit de margini */
+    color: white;               /* Textul tastat va fi alb */
+    font-size: 16px;
+    font-family: inherit;         /* Obliga cutia de text sa foloseasca acelasi font ca restul site-ului */
+    resize: vertical;             /* COMANDA IMPORTANTA: Utilizatorul poate trage de cutie doar in jos (sa o lungeasca), dar NU in lateral! */
+    margin-bottom: 15px;          /* Spatiu pana la butonul "Post Review" */
+}
+
+/* Efectul cand dai click ca sa scrii in ea */
+.add-review-section textarea:focus {
+    outline: none;                /* Ascunde chenarul albastru pus by default de browsere (Chrome, Edge) */
+    border-color: #ffc107;      /* Marginea se lumineaza in auriu, semnaland ca e activa */
+}
+
+/* Containerul butonului de Post */
+.action-row {
+    display: flex;               /* Activam Flexbox */
+    justify-content: flex-end;   /* Impinge butonul "Post Review" complet in partea dreapta */
+}
+
+/* Butonul "Post Review" */
+.btn-post-review {
+    background-color: #ffc107; 
+    color: black;              /* Text negru, pentru contrast ridicat */
+    border: none;                /* Nu vrem o alta bordura pe langa fundal */
+    padding: 12px 30px;          /* Un buton  usor de apasat (padding interior) */
+    border-radius: 25px;         
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;             /* Cursorul devine manuta cand treci peste */
+    transition: 0.3s;
+}
+
+.btn-post-review:hover {
+    background-color: white;   /* Se face alb cand vrei sa apesi */
+}
+
+/* LISTA DE COMENTARII (Zona cu recenziile altor useri) */
+.reviews-list {
+    display: flex;
+    flex-direction: column;    /* Fiecare comentariu va fi pe un rand separat, unul sub altul */
+    gap: 25px;                 /* Spatiu de 25px intre comentarii, ca sa fie vizual separate clar */
+}
+
+/* O singura caseta de recenzie (un comentariu intreg) */
+.review-item {
+    display: flex;                    /* Imparte interiorul casetei in stanga (Avatar) si dreapta (Zona cu text) */
+    gap: 25px;                        /* Distanta intre avatar si text */
+    background-color: #333;         /* Fundalul comentariului e putin mai deschis decat fundalul general */
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 5px solid #ffc107; /*  O dunga groasa aurie in stanga casetei pentru un aspect modern si profesional */
+}
+
+/* Avatarul (Cercul cu initiale din stanga) */
+.reviewer-avatar {
+    width: 60px;                 /* Latime fixa */
+    height: 60px;                /* Inaltime fixa egala, pentru a forma un patrat */
+    background-color: #222;    /* Gri inchis */
+    color: #ffc107;            /* Initialele sunt aurii */
+    border-radius: 50%;          /* Transforma patratul de 60x60 intr-un CERC PERFECT */
+    display: flex;             
+    align-items: center;         /* Centreaza initialele vertical in cerc */
+    justify-content: center;     /* Centreaza initialele orizontal in cerc */
+    font-weight: bold;
+    font-size: 22px;
+    flex-shrink: 0;              /* COMANDA IMPORTANTA: Previne turtirea cercului in oval, chiar daca textul comentariului e foarte lung */
+}
+
+/* Containerul din dreapta avatarului (Nume + Data + Text) */
+.review-content {
+    flex: 1;                   /* Ocupa tot spatiul ramas liber dupa ce avatarul si-a luat cei 60px */
+    text-align: left;
+}
+
+/* Randul cu Numele utilizatorului si Data postarii */
+.review-header {
+    display: flex;
+    justify-content: space-between; /* Arunca Numele in stanga si Data complet in dreapta */
+    align-items: center;            /* Le mentine pe aceeasi linie orizontala imaginara */
+    margin-bottom: 15px;            /* Distanta pana la textul propriu-zis al recenziei */
+}
+
+/* Numele celui care a comentat */
+.review-header h4 {
+    margin: 0;
+    color: white;              /* Alb pentru a iesi in evidenta */
+    font-size: 20px;
+}
+
+/* Data postarii recenziei */
+.review-date {
+    color: #888;               
+    font-size: 14px;
+}
+
+/* Textul efectiv al recenziei scrise de user */
+.review-content p {
+    color: #ccc;               /* Textul comentariului e un pic mai sters decat numele autorului */
+    margin: 0;
+    line-height: 1.6;            /* Face paragraful aerisit si usor de citit */
+    font-size: 16px;
+}

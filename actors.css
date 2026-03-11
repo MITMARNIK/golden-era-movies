@@ -1,0 +1,93 @@
+/* --- STRUCTURA DE BAZA A PAGINII --- */
+body {
+    background-color: gold;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.section-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+    margin-top: 40px;
+}
+
+/* --- CONTAINERUL LISTEI DE ACTORI --- */
+.actor-vertical-list {
+    max-width: 700px;          /* Facem caseta putin mai lata ca sa aiba loc poza rotunda si textul */
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-bottom: 50px;
+}
+
+/* --- CASETA INDIVIDUALA A ACTORULUI --- */
+.actor-vertical-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #2c2c2c;
+    border-radius: 20px;
+    padding: 30px;             /* Padding mai mare pentru eleganta */
+    border: 1px solid #444;
+    transition: 0.3s;
+}
+
+.actor-vertical-item:hover {
+    border-color: #ffc107;
+    transform: translateY(-5px); /* Se ridica fin cand pui mouse-ul pe caseta */
+}
+
+/* --- POZA ROTUNDA A ACTORULUI (Efect Hall of Fame) --- */
+.actor-round-img {
+    width: 200px;              /* Latimea si inaltimea trebuie sa fie egale pentru un cerc perfect */
+    height: 200px;
+    object-fit: cover;         /* Taie poza perfect fara sa o deformeze */
+    border-radius: 50%;        /* COMANDA MAGICA: transforma patratul in cerc perfect */
+    border: 5px solid #ffc107; /* O rama groasa aurie in jurul portretului */
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+/* --- ZONA DE TEXT --- */
+.vertical-content h3 {
+    color: white;
+    font-size: 32px;           /* Numele actorului putin mai mare */
+    margin-bottom: 10px;
+}
+
+/* Detaliile (Rol si Premii) */
+.actor-stats {
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.role { 
+    color: #00d4ff;            /* Albastru pentru rol */
+    margin-right: 20px;
+}
+
+.oscars { 
+    color: #ffc107;            /* Auriu pentru Oscaruri */
+}
+
+/* Biografia scurta */
+.actor-description {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+/* SECTIUNEA FOOTER */
+footer {
+    background-color: #2c2c2c;  
+    color: #777;              
+    text-align: center;          /* Centraza continutul in mijlocul barii */
+    margin-top: auto;            /* Absoarbe tot spatiul gol ramas deasupra lui si il forteaza sa se lipeasca de "podeaua" ecranului */
+    border-radius: 50px;         
+}

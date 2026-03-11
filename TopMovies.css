@@ -1,0 +1,103 @@
+/* FUNDALUL SI STRUCTURA PAGINII */
+body {
+    background-color: gold;
+
+    display: flex;             /* Transforma toata pagina intr-o coloana mare, ca sa pot manipula asezarea elementelor */
+    flex-direction: column;    /* Asaza piesele de sus in jos (intai navbar-ul, apoi filmele, apoi footer-ul) */
+    min-height: 100vh;         /* Ii spune paginii: "Fii macar la fel de inalta cat ecranul monitorului" */
+}
+
+.section-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* CONTAINERUL PRINCIPAL AL LISTEI VERTICALE */
+.movie-vertical-list {
+    max-width: 600px;          /* Limitam latimea la 600px pentru ca lista sa nu se intinda pe tot ecranul */
+    margin: 0 auto;            /* Centreaza toata lista pe mijlocul paginii */
+    display: flex;             /* Activam Flexbox pentru a controla asezarea elementelor */
+    flex-direction: column;    /* Fortam elementele (filmele) sa stea unul sub altul */
+    gap: 50px;                 /* Cream o distanta generoasa de 50px intre fiecare film din lista */
+    padding-bottom: 50px;      /* Adaugam spatiu jos de tot, ca ultimul film sa nu stea lipit de footer */
+}
+
+/* ELEMENTUL INDIVIDUAL (Caseta filmului) */
+.movie-vertical-item {
+    display: flex;               /* Activam Flexbox si in interiorul fiecarui rand */
+    flex-direction: column;      /* Fortam continutul (poza, titlul, butonul) sa curga de sus in jos */
+    align-items: center;         /* Centreaza pe orizontala toate elementele din interior (poza, textul, butonul) */
+    text-align: center;          /* Aliniaza textul pe centrul fiecarui rand */
+    background-color: #2c2c2c; /* Fundalul gri inchis, specific temei tale */
+    border-radius: 20px;         /* Rotunjim colturile casetei */
+    padding: 20px;               /* Spatiu interior pentru ca elementele sa nu atinga marginile casetei */
+    border: 1px solid #444;    /* O bordura fina pentru a delimita clar fiecare film */
+}
+
+/* STILIZARE POSTER */
+.vertical-poster {
+    width: 100%;                                 /* Posterul incearca sa ocupe toata latimea disponibila */
+    max-width: 400px;                            /* Dar ii punem o limita de 400px  */
+    height: auto;                                /* Pastreaza proportiile imaginii indiferent de latime */
+    border-radius: 15px;                         /* Rotunjim colturile pozei */
+    margin-bottom: 20px;                         /* Spatiu intre poza si titlul de dedesubt */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);   /* Adaugam o umbra puternica pentru a da profunzime posterului */
+}
+
+/* ZONA DE TEXT SI TITLU */
+.vertical-content h3 {
+    color: white;         
+    font-size: 28px;           /* Dimensiune mare pentru vizibilitate */
+    margin-bottom: 10px;       /* Spatiu intre titlu si nota filmului */
+}
+
+/* Zona cu Nota si Vizualizarile */
+.movie-stats {
+    margin-bottom: 15px;       /* Spatiu sub statistici, inainte de descriere */
+    font-weight: bold;         /* Ingrosam cifrele pentru a fi mai lizibile */
+    font-size: 16px;           /* Dimensiune medie */
+}
+
+.rating { 
+    color: #ffc107;          /* Culoarea aurie pentru nota filmului */
+    margin-right: 15px;        /* Spatiu intre nota si vizualizari */
+}
+
+.views { 
+    color: #00d4ff;            /* Culoarea albastru electric pentru vizualizari */
+}
+
+/* Descrierea filmului */
+.movie-description {
+    color: #ccc;             /* Gri deschis pentru a nu fi la fel de strident ca titlul */
+    line-height: 1.6;          /* Marim spatiul dintre randuri pentru o citire mai usoara */
+    margin-bottom: 25px;       /* Spatiu intre descriere si butonul final */
+}
+
+/* BUTONUL DIN DREAPTA ("View Details") */
+.btn-vezi {
+    background-color: transparent; /* Fundal gol (contur stilat) */
+    color: #ffc107;              /* Text auriu */
+    border: 2px solid #ffc107;   /* Rama aurie groasa de 2px */
+    padding: 8px 20px;             /* Le face usor de apasat */
+    text-decoration: none;         /* Scoate dunga de link */
+    border-radius: 20px;           /* Forma rotunda la capete */
+    font-weight: bold;             /* Text puternic */
+    white-space: nowrap;
+    transition: 0.3s;              /* Animatie fina la hover */
+}
+
+/* Efectul de hover pe butoane */
+.btn-vezi:hover {
+    background-color: #ffc107; /* Butonul se umple complet cu auriu la atingere */
+    color: black;              /* Textul devine negru pentru contrast pe auriu */
+}
+
+/* SECTIUNEA FOOTER */
+footer {
+    background-color: #2c2c2c;  
+    color: #777;              
+    text-align: center;          /* Centraza continutul in mijlocul barii */
+    margin-top: auto;            /* Absoarbe tot spatiul gol ramas deasupra lui si il forteaza sa se lipeasca de "podeaua" ecranului */
+    border-radius: 50px;         
+}
