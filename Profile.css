@@ -161,7 +161,7 @@ body {
     width: 100%;               /* Face ca tot randul sa fie clickabil */
     padding: 10px 0;           /* Spatiu pentru a fi usor de apasat pe mobil */
     transition: 0.3s;
-}
+} 
 
 /* Efectul cand pui mouse-ul pe randul respectiv */
 .settings-list li a.profile-link:hover {

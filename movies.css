@@ -7,7 +7,7 @@ body {
     min-height: 100vh;         /* Intinde pagina pana jos de tot */
 }
 
-/* CONTAINERUL PENTRU LISTA DE FILME */
+/* CONTAINERUL PENTRU LISTA DE FILME */  
 .movie-list {
     display: flex;             /* Activeaza sistemul Flexbox pentru lista */
     flex-direction: column;    /* Fortam filmele sa stea unul sub altul, ca niste randuri */

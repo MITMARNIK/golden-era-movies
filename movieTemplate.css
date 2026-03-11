@@ -7,7 +7,7 @@ body {
     min-height: 100vh;         /* Intinde pagina pana jos de tot */
 }
 
-/* Cutia mare care tine tot continutul */
+/* Cutia mare care tine tot continutul */ 
 .movie-details-container {
     max-width: 1000px;           /* Limiteaza latimea ca sa nu se "intinda" textul prea mult pe ecrane mari */
     margin: 60px auto;           /* O centreaza si lasa 60px spatiu fata de navbar-ul de sus */

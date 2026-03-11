@@ -7,8 +7,8 @@ body {
 }
 
 /* --- WRAPPER-UL CARE CENTREAZA CUTIA --- */
-.auth-page-wrapper {
-    flex: 1;                   /* Ocupa tot spatiul gol ramas intre navbar si footer */
+.auth-page-wrapper { 
+    flex: 1;                   /* Ocupa tot spatiul  gol ramas intre navbar si footer */
     display: flex;             /* Activam Flexbox */
     align-items: center;       /* Centreaza cutia pe verticala */
     justify-content: center;   /* Centreaza cutia pe orizontala */

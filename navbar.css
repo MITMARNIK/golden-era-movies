@@ -17,7 +17,7 @@ html {
 .custom-navbar li {
     border-right: 1px solid #555; /* Trage o dunga subtire in partea dreapta a fiecarui buton, ca sa le separe */
 }
-
+ 
 /* ULTIMUL BUTON DIN LISTA */
 .custom-navbar li:last-child {
     border-right: none; /* Ii zice ultimului buton:tu nu primi dunga in dreapta */

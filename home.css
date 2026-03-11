@@ -73,7 +73,7 @@ body {
     white-space: nowrap;
     transition: 0.3s;              /* Animatie fina la hover */
 }
-
+ 
 /* Efectul de hover pe butoane */
 .btn-vezi:hover {
     background-color: #ffc107; /* Butonul se umple complet cu auriu la atingere */

@@ -17,7 +17,7 @@ body {
 }
 
 /* RANDUL INDIVIDUAL (Fiecare film in parte) */
-.movie-list-item {
+.movie-list-item { 
     background-color: #2c2c2c;      /* Fundalul gri inchis */
     border: 10px solid #2c2c2c;     /* Un contur subtire ca sa se vada unde incepe si unde se termina filmul */
     border-radius: 10px;              /* Rotunjeste colturile */

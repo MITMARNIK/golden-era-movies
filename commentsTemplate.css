@@ -4,7 +4,7 @@ body {
 
     display: flex;             /* Pregateste pagina pentru asezarea inteligenta a elementelor */
     flex-direction: column;    /* Pune elementele (navbar, lista, footer) unul sub altul pe verticala */
-    min-height: 100vh;         /* Intinde pagina pana jos de tot */
+    min-height: 100vh;          /* Intinde pagina pana jos de tot */
 }
 
 /* CONTAINERUL GENERAL (Cutia mare centrala) */
