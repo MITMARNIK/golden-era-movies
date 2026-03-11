@@ -70,7 +70,7 @@ body {
     text-decoration: none;         /* Scoate dunga de link */
     border-radius: 20px;           /* Forma rotunda la capete */
     font-weight: bold;             /* Text puternic */
-    white-space: nowrap;
+    white-space: nowrap;           /* Forteaza textul pe un singur rand */
     transition: 0.3s;              /* Animatie fina la hover */
 }
  
