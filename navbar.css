@@ -9,6 +9,10 @@
     margin: 0 auto;              /* Ia toata bara si o centreaza perfect pe mijlocul ecranului */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* LINIA DE DESPARTIRE DINTRE BUTOANE */
 .custom-navbar li {
     border-right: 1px solid #555; /* Trage o dunga subtire in partea dreapta a fiecarui buton, ca sa le separe */
