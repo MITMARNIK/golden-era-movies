@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+
+<link rel="stylesheet" href="~/css/LoginRegister.css" asp-append-version="true" />
+
+<div class="auth-page-wrapper">
+    <div class="auth-box"> 
+        <h2 class="auth-title">Join <span>Golden Era</span></h2>
+
+        <form>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Choose a username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Choose a password" required>
+            </div>
+
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+            </div>
+
+            <button type="submit" class="auth-choice-btn btn-outline">Create an Account</button>
+        </form>
+
+        <a asp-action="Index" class="back-link-auth">&larr; Back to Choice</a>
+    </div>
+</div>

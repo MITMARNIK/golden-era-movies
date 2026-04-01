@@ -1,0 +1,29 @@
+﻿@model IEnumerable<GoldenEraMovies.Models.Movie>
+
+@{
+    ViewData["Title"] = "Home";
+}
+<link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+
+<div class="movies-container">
+    <h2 class="section-title">Top Rated Movies</h2>
+
+    <div class="movies-grid">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var movie in Model)
+            {
+                <div class="movie-card">
+                    <img src="@movie.PosterPath" alt="@movie.Title">
+                    <h3>@movie.Title</h3>
+                    <p>Rating: @movie.AverageRating/10</p>
+                    <a asp-controller="Movies" asp-action="Details" asp-route-id="@movie.MovieId" class="btn-vezi">View Details</a>  
+                </div>
+            }
+        }
+        else
+        {
+            <p>No movies available at the moment.</p>
+        }
+    </div>
+</div>

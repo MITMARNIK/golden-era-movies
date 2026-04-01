@@ -1,0 +1,37 @@
+﻿@model IEnumerable<GoldenEraMovies.Models.Movie>
+
+@{
+    ViewData["Title"] = "Top Movies";
+}
+
+<link rel="stylesheet" href="~/css/TopMovies.css" asp-append-version="true" />
+
+<div class="movies-container">
+    <h2 class="section-title">Top Rated Movies</h2>
+
+    <div class="movie-vertical-list">
+        @foreach (var item in Model)
+        {
+            <div class="movie-vertical-item">
+                <img src="@item.PosterPath" alt="@item.Title" class="vertical-poster">
+
+                <div class="vertical-content">
+                    <h3>@item.Title</h3>
+                    <div class="movie-stats">
+                        <span class="rating">Rating: @item.AverageRating/5.00</span>
+                        <span class="views">@item.ViewsCount views</span>
+                    </div>
+                    <p class="movie-description">@item.Description</p>
+                    <a asp-action="Details" asp-route-id="@item.MovieId" class="btn-vezi">View Details</a>      
+                </div>
+            </div>
+        }
+
+        @if (!Model.Any())
+        {
+            <div class="movie-vertical-item">
+                <p style="color: white;">No top movies found.</p>
+            </div>
+        }
+    </div>
+</div>

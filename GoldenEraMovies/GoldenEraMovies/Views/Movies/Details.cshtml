@@ -1,0 +1,65 @@
+﻿@model GoldenEraMovies.Models.Movie
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<link rel="stylesheet" href="~/css/movieTemplate.css" asp-append-version="true" />
+
+<div class="movie-details-container">
+
+    <div class="details-poster">
+        <img src="@Model.PosterPath" alt="Poster @Model.Title">
+    </div>
+
+    <div class="details-info">
+        <h1 class="details-title">@Model.Title</h1>
+
+        <div class="details-meta">
+            <span class="meta-item">Release Year: @Model.ReleaseYear</span>
+            <span class="meta-item">Duration: @Model.Duration min</span>
+            <span class="meta-item">Genre: @(Model.Genre?.Name ?? "N/A")</span>
+            <span class="meta-rating">⭐ @Model.AverageRating/5.00</span>
+        </div>
+
+        <div class="user-vote-section">
+            <span class="vote-text">Rate this movie:</span>
+            <div class="star-rating">
+                <span class="star" data-value="5">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="1">★</span>
+            </div>
+        </div>
+
+        <h3 class="details-subtitle">Synopsis</h3>
+        <p class="details-synopsis">
+            @Model.Description
+        </p>
+
+        <div class="details-actions">
+            <a href="#" class="btn-vezi">+ Add to Watchlist</a>
+            <a asp-controller="Home" asp-action="Index" class="btn-vezi">Back to List</a>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $(".star").click(function() {
+        var rv = $(this).attr("data-value");
+        var mid = @Model.MovieId;
+        $.post("/Movies/Rate", { id: mid, rating: rv }, function(res) {
+            if(res.success) {
+                alert("Rating salvat cu succes!");
+                location.reload();
+            } else {
+                alert("Eroare la salvarea rating-ului.");
+            }
+        });
+    });
+});
+</script>

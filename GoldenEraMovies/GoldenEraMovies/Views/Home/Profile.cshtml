@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "My Profile";
+}
+
+<link rel="stylesheet" href="~/css/Profile.css" asp-append-version="true" />
+
+<div class="profile-container">
+    <div class="profile-header">
+        <div class="profile-avatar">JD</div>
+        <div class="profile-info">
+            <h1>John Doe</h1>
+            <p class="user-mail">john.doe@email.com</p>
+            <div class="user-stats">
+                <span><strong>12</strong> Movies Watched</span>
+                <span><strong>5</strong> Reviews Posted</span>
+            </div>
+        </div>
+        <button class="btn-edit">Edit Profile</button>
+    </div>
+
+    <div class="profile-content">
+        <div class="content-section">
+            <h2>Recently Watched</h2>
+            <div class="mini-movie-grid">
+                <div class="mini-card">
+                    <img src="~/Imagini/GodFather.jpg" alt="Movie">
+                    <span>The Godfather</span>
+                </div>
+                <div class="mini-card">
+                    <img src="~/Imagini/CasablancaPoster-Gold.jpg" alt="Movie">
+                    <span>Casablanca</span>
+                </div>
+                <div class="mini-card">
+                    <img src="~/Imagini/12 Angry MAN.jpg" alt="Movie">
+                    <span>12 Angry Men</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Account Settings</h2>
+            <ul class="settings-list">
+                <li>Change Password <span>&rsaquo;</span></li>
+                <li>
+                    <a asp-controller="Home" asp-action="Watchlist" class="profile-link">Watchlist</a>
+                    <span>&rsaquo;</span>
+                </li>
+                <li class="logout">Log Out</li>
+            </ul>
+        </div>
+    </div>
+</div>
