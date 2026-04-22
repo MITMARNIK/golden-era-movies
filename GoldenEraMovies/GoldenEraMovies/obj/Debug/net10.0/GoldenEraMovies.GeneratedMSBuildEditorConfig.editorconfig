@@ -42,8 +42,44 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/STUFF/FACULTATE AN 3/SEMESTRUL 2/PAW/Proiect/GoldenEraMovies/GoldenEraMovies/Views/Actors/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0b3JzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/STUFF/FACULTATE AN 3/SEMESTRUL 2/PAW/Proiect/GoldenEraMovies/GoldenEraMovies/Views/Actors/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0b3JzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/STUFF/FACULTATE AN 3/SEMESTRUL 2/PAW/Proiect/GoldenEraMovies/GoldenEraMovies/Views/Actors/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0b3JzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/STUFF/FACULTATE AN 3/SEMESTRUL 2/PAW/Proiect/GoldenEraMovies/GoldenEraMovies/Views/Actors/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0b3JzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/STUFF/FACULTATE AN 3/SEMESTRUL 2/PAW/Proiect/GoldenEraMovies/GoldenEraMovies/Views/Actors/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0b3JzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/STUFF/FACULTATE AN 3/SEMESTRUL 2/PAW/Proiect/GoldenEraMovies/GoldenEraMovies/Views/Genres/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VucmVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/STUFF/FACULTATE AN 3/SEMESTRUL 2/PAW/Proiect/GoldenEraMovies/GoldenEraMovies/Views/Genres/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VucmVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/STUFF/FACULTATE AN 3/SEMESTRUL 2/PAW/Proiect/GoldenEraMovies/GoldenEraMovies/Views/Genres/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VucmVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/STUFF/FACULTATE AN 3/SEMESTRUL 2/PAW/Proiect/GoldenEraMovies/GoldenEraMovies/Views/Genres/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VucmVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/STUFF/FACULTATE AN 3/SEMESTRUL 2/PAW/Proiect/GoldenEraMovies/GoldenEraMovies/Views/Genres/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VucmVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/STUFF/FACULTATE AN 3/SEMESTRUL 2/PAW/Proiect/GoldenEraMovies/GoldenEraMovies/Views/Home/Index.cshtml]
@@ -64,6 +100,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/STUFF/FACULTATE AN 3/SEMESTRUL 2/PAW/Proiect/GoldenEraMovies/GoldenEraMovies/Views/Movies/Top.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXFRvcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/STUFF/FACULTATE AN 3/SEMESTRUL 2/PAW/Proiect/GoldenEraMovies/GoldenEraMovies/Views/Reviews/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/STUFF/FACULTATE AN 3/SEMESTRUL 2/PAW/Proiect/GoldenEraMovies/GoldenEraMovies/Views/Reviews/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/STUFF/FACULTATE AN 3/SEMESTRUL 2/PAW/Proiect/GoldenEraMovies/GoldenEraMovies/Views/Reviews/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/STUFF/FACULTATE AN 3/SEMESTRUL 2/PAW/Proiect/GoldenEraMovies/GoldenEraMovies/Views/Reviews/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/STUFF/FACULTATE AN 3/SEMESTRUL 2/PAW/Proiect/GoldenEraMovies/GoldenEraMovies/Views/Reviews/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/STUFF/FACULTATE AN 3/SEMESTRUL 2/PAW/Proiect/GoldenEraMovies/GoldenEraMovies/Views/Shared/Error.cshtml]

@@ -1,0 +1,31 @@
+@model GoldenEraMovies.Models.Actor
+@{ ViewData["Title"] = "Edit Actor"; }
+<h1>Edit Actor</h1>
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="ActorId" />
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImagePath" class="control-label">Image URL</label>
+                <input asp-for="ImagePath" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="OscarAwards" class="control-label"></label>
+                <input asp-for="OscarAwards" class="form-control" type="number" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Bio" class="control-label"></label>
+                <textarea asp-for="Bio" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" value="Update" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>

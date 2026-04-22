@@ -1037,10 +1037,10 @@ D:\STUFF\FACULTATE AN 3\SEMESTRUL 2\PAW\Proiect\GoldenEraMovies\GoldenEraMovies\
 D:\STUFF\FACULTATE AN 3\SEMESTRUL 2\PAW\Proiect\GoldenEraMovies\GoldenEraMovies\obj\Debug\net10.0\staticwebassets.development.json
 D:\STUFF\FACULTATE AN 3\SEMESTRUL 2\PAW\Proiect\GoldenEraMovies\GoldenEraMovies\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 D:\STUFF\FACULTATE AN 3\SEMESTRUL 2\PAW\Proiect\GoldenEraMovies\GoldenEraMovies\obj\Debug\net10.0\swae.build.ex.cache
-D:\STUFF\FACULTATE AN 3\SEMESTRUL 2\PAW\Proiect\GoldenEraMovies\GoldenEraMovies\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 D:\STUFF\FACULTATE AN 3\SEMESTRUL 2\PAW\Proiect\GoldenEraMovies\GoldenEraMovies\obj\Debug\net10.0\GoldenEr.2D489C34.Up2Date
 D:\STUFF\FACULTATE AN 3\SEMESTRUL 2\PAW\Proiect\GoldenEraMovies\GoldenEraMovies\obj\Debug\net10.0\GoldenEraMovies.dll
 D:\STUFF\FACULTATE AN 3\SEMESTRUL 2\PAW\Proiect\GoldenEraMovies\GoldenEraMovies\obj\Debug\net10.0\refint\GoldenEraMovies.dll
 D:\STUFF\FACULTATE AN 3\SEMESTRUL 2\PAW\Proiect\GoldenEraMovies\GoldenEraMovies\obj\Debug\net10.0\GoldenEraMovies.pdb
 D:\STUFF\FACULTATE AN 3\SEMESTRUL 2\PAW\Proiect\GoldenEraMovies\GoldenEraMovies\obj\Debug\net10.0\GoldenEraMovies.genruntimeconfig.cache
 D:\STUFF\FACULTATE AN 3\SEMESTRUL 2\PAW\Proiect\GoldenEraMovies\GoldenEraMovies\obj\Debug\net10.0\ref\GoldenEraMovies.dll
+D:\STUFF\FACULTATE AN 3\SEMESTRUL 2\PAW\Proiect\GoldenEraMovies\GoldenEraMovies\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

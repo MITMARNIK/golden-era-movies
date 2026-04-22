@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace GoldenEraMovies.Models
@@ -11,6 +11,6 @@ namespace GoldenEraMovies.Models
         [Required]
         public string Name { get; set; }
 
-        public ICollection<Movie> Movies { get; set; }
+        public ICollection<Movie>? Movies { get; set; }
     }
 }

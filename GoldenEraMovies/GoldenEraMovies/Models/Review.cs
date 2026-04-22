@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -9,19 +9,20 @@ namespace GoldenEraMovies.Models
         [Key]
         public int ReviewId { get; set; }
 
+        [Required]
         public string CommentText { get; set; }
 
+        [Required]
+        [Range(1, 5)]
         public int StarRating { get; set; }
 
         public DateTime CreatedAt { get; set; }
 
-        // Legatura cu filmul (Foreign Key)
+        [Required]
         public int MovieId { get; set; }
 
-        [ForeignKey("MovieId")]
-        public Movie Movie { get; set; }
+        public Movie? Movie { get; set; }
 
-        // Legatura cu utilizatorul (Identity)
-        public string UserId { get; set; }
+        public string? UserId { get; set; }
     }
 }

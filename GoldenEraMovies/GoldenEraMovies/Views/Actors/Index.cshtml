@@ -1,39 +1,26 @@
-﻿@{
-    ViewData["Title"] = "Top Actors";
-}
-
-<link rel="stylesheet" href="~/css/actors.css" asp-append-version="true" />
-
-<div class="actors-container">
-    <h2 class="section-title">Hall of Fame: Top Actors</h2>
-
-    <div class="actor-vertical-list">
-
-        <div class="actor-vertical-item">
-            <img src="~/Imagini/Marlon Brandon.jpg" alt="Marlon Brando" class="actor-round-img">
-
-            <div class="vertical-content">
-                <h3>Marlon Brando</h3>
-                <div class="actor-stats">
-                    <span class="role">Iconic Role: Vito Corleone</span>
-                    <span class="oscars">🏆 2 Oscars</span>
-                </div>
-                <p class="actor-description">Considered one of the greatest and most influential actors of all time, he brought a gripping realism to film acting and is widely celebrated for his Academy Award-winning performances.</p>
-            </div>
-        </div>
-
-        <div class="actor-vertical-item">
-            <img src="~/Imagini/humphrey-bogart-young.jpg" alt="Humphrey Bogart" class="actor-round-img">
-
-            <div class="vertical-content">
-                <h3>Humphrey Bogart</h3>
-                <div class="actor-stats">
-                    <span class="role">Iconic Role: Rick Blaine</span>
-                    <span class="oscars">🏆 1 Oscar</span>
-                </div>
-                <p class="actor-description">An American film and stage actor whose performances in 1940s films noir made him a cultural icon. Best known for his unforgettable role in Casablanca.</p>
-            </div>
-        </div>
-
-    </div>
-</div>
+@model IEnumerable<GoldenEraMovies.Models.Actor>
+@{ ViewData["Title"] = "Actors Management"; }
+<h1>Actors Management</h1>
+<p><a asp-action="Create" class="btn btn-primary">Add New Actor</a></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Oscar Awards</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.FullName)</td>
+            <td>@Html.DisplayFor(modelItem => item.OscarAwards)</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ActorId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ActorId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ActorId">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

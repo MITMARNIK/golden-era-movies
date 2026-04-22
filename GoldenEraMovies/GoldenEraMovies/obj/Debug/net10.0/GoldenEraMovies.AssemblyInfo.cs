@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GoldenEraMovies")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c417fb955dd1530342274ebee9b1562b1a346739")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9461de3fccf90310ca29dbc893f924e430f15ac")]
 [assembly: System.Reflection.AssemblyProductAttribute("GoldenEraMovies")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GoldenEraMovies")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
