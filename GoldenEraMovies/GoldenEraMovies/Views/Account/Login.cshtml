@@ -1,4 +1,6 @@
-﻿@{
+@model GoldenEraMovies.Models.User
+
+@{
     ViewData["Title"] = "Login";
 }
 
@@ -8,20 +10,22 @@
     <div class="auth-box"> 
         <h2 class="auth-title">Welcome Back to <span>Golden Era</span></h2>
 
-        <form>
+        <form asp-action="Login" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger" style="margin-bottom: 15px; font-size: 14px;"></div>
+
             <div class="input-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
+                <label asp-for="Username">Username</label>
+                <input asp-for="Username" placeholder="Enter your username" required>
             </div>
 
             <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password" required>
+                <label asp-for="Password">Password</label>
+                <input asp-for="Password" type="password" placeholder="Enter your password" required>
             </div>
 
-            <button type="submit" class="auth-choice-btn btn-solid">Login</button>
+            <button type="submit" class="auth-choice-btn btn-solid" style="margin-top: 20px;">Login</button>
         </form>
 
-        <a asp-action="Index" class="back-link-auth">&larr; Back to Choice</a>
+        <a asp-action="Index" class="back-link-auth" style="margin-top: 20px; display: block;">&larr; Back to Choice</a>
     </div>
 </div>

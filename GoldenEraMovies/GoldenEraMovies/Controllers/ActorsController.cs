@@ -10,8 +10,8 @@ namespace GoldenEraMovies.Controllers
         private readonly IActorService _actorService;
         public ActorsController(IActorService actorService) { _actorService = actorService; }
 
-        // Index: afisare lista actori
-        public async Task<IActionResult> Index() => View(await _actorService.GetAllActorsAsync());
+        // Index: afisare lista actori sortata alfabetic dupa nume
+        public async Task<IActionResult> Index() => View(await _actorService.GetActorsSortedByNameAsync());
         
         // Details: date complete actor
         public async Task<IActionResult> Details(int? id) { if (id == null) return NotFound(); var actor = await _actorService.GetActorByIdAsync(id.Value); return actor == null ? NotFound() : View(actor); }

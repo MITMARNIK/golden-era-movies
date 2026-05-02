@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -18,6 +18,6 @@ namespace GoldenEraMovies.Models
         public Movie Movie { get; set; }
 
         // Legatura cu utilizatorul
-        public string UserId { get; set; }
+        public int UserId { get; set; }
     }
 }

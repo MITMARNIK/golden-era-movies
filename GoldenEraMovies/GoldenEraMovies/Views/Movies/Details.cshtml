@@ -1,4 +1,4 @@
-﻿@model GoldenEraMovies.Models.Movie
+@model GoldenEraMovies.Models.Movie
 
 @{
     ViewData["Title"] = Model.Title;
@@ -9,7 +9,7 @@
 <div class="movie-details-container">
 
     <div class="details-poster">
-        <img src="@Model.PosterPath" alt="Poster @Model.Title">
+        <img src="@(string.IsNullOrEmpty(Model.PosterPath) || Model.PosterPath.Contains("null") ? "https://images.placeholders.dev/?width=400&height=600&text=No+Poster+Available&bgColor=%232c2c2c&textColor=%23ffc107" : Model.PosterPath)" alt="Poster @Model.Title">
     </div>
 
     <div class="details-info">
@@ -35,11 +35,11 @@
 
         <h3 class="details-subtitle">Synopsis</h3>
         <p class="details-synopsis">
-            @Model.Description
+            @(string.IsNullOrEmpty(Model.Description) ? "Synopsis currently unavailable for this classic masterpiece. We are working to uncover more details about this historical gem!" : Model.Description)
         </p>
 
         <div class="details-actions">
-            <a href="#" class="btn-vezi">+ Add to Watchlist</a>
+            <a asp-controller="Movies" asp-action="AddToWatchlist" asp-route-id="@Model.MovieId" class="btn-vezi">+ Add to Watchlist</a>
             <a asp-controller="Home" asp-action="Index" class="btn-vezi">Back to List</a>
         </div>
 

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GoldenEraMovies.Models.Movie>
+@model IEnumerable<GoldenEraMovies.Models.Movie>
 
 @{
     ViewData["Title"] = "Movies";
@@ -10,11 +10,11 @@
     @foreach (var item in Model)
     {
         <div class="movie-list-item">
-            <img src="@item.PosterPath" alt="Poster @item.Title">
+            <img src="@(string.IsNullOrEmpty(item.PosterPath) || item.PosterPath.Contains("null") ? "https://images.placeholders.dev/?width=300&height=450&text=No+Poster&bgColor=%232c2c2c&textColor=%23ffc107" : item.PosterPath)" alt="Poster @item.Title">
             <div class="movie-info">
                 <h3>@item.Title</h3>
                 <p class="movie-meta">Rating: @item.AverageRating/5.00</p>
-                <p class="movie-desc">@item.Description</p>
+                <p class="movie-desc">@(string.IsNullOrEmpty(item.Description) ? "Description currently unavailable for this classic masterpiece." : item.Description)</p>
             </div>
             <a asp-action="Details" asp-route-id="@item.MovieId" class="btn-vezi">View Details</a>
         </div>

@@ -1,0 +1,162 @@
+@model GoldenEraMovies.Models.SearchViewModel
+
+@{
+    ViewData["Title"] = "Search Results";
+}
+
+<style>
+    .search-results-container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .search-header {
+        margin-bottom: 40px;
+        border-bottom: 2px solid #ffc107;
+        padding-bottom: 10px;
+    }
+
+    .search-header h2 {
+        color: #2c2c2c;
+        font-size: 28px;
+    }
+
+    .search-header span {
+        color: #ffc107;
+        font-style: italic;
+    }
+
+    .result-section {
+        margin-bottom: 50px;
+    }
+
+    .result-section h3 {
+        color: #2c2c2c;
+        border-left: 5px solid #ffc107;
+        padding-left: 15px;
+        margin-bottom: 25px;
+        font-size: 22px;
+        text-transform: uppercase;
+    }
+
+    /* Reuse some styles or define simple ones */
+    .results-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .result-card {
+        background: #2c2c2c;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: 0.3s;
+        text-align: center;
+        padding-bottom: 15px;
+    }
+
+    .result-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .result-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .result-card h4 {
+        color: white;
+        margin: 15px 10px 5px;
+        font-size: 16px;
+    }
+
+    .no-results {
+        color: #888;
+        font-style: italic;
+    }
+
+    .genre-tag {
+        display: inline-block;
+        background: #ffc107;
+        color: #2c2c2c;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-weight: bold;
+        margin: 5px;
+        text-decoration: none;
+    }
+</style>
+
+<div class="search-results-container">
+    <div class="search-header">
+        <h2>Search results for: <span>"@Model.Query"</span></h2>
+    </div>
+
+    <!-- MOVIES SECTION -->
+    <div class="result-section">
+        <h3>Movies</h3>
+        @if (Model.Movies.Any())
+        {
+            <div class="results-grid">
+                @foreach (var movie in Model.Movies)
+                {
+                    <a asp-controller="Movies" asp-action="Details" asp-route-id="@movie.MovieId" style="text-decoration: none;">
+                        <div class="result-card">
+                            <img src="@movie.PosterPath" alt="@movie.Title">
+                            <h4>@movie.Title</h4>
+                            <p style="color: #ffc107; font-size: 12px; margin-top: -5px;">@(movie.Genre?.Name ?? "N/A")</p>
+                        </div>
+                    </a>
+                }
+            </div>
+        }
+        else
+        {
+            <p class="no-results">No movies found matching your search.</p>
+        }
+    </div>
+
+    <!-- ACTORS SECTION -->
+    <div class="result-section">
+        <h3>Actors</h3>
+        @if (Model.Actors.Any())
+        {
+            <div class="results-grid">
+                @foreach (var actor in Model.Actors)
+                {
+                    <a asp-controller="Actors" asp-action="Details" asp-route-id="@actor.ActorId" style="text-decoration: none;">
+                        <div class="result-card">
+                            <img src="@(string.IsNullOrEmpty(actor.ImagePath) ? "/images/placeholder-actor.jpg" : actor.ImagePath)" alt="@actor.FullName">
+                            <h4>@actor.FullName</h4>
+                        </div>
+                    </a>
+                }
+            </div>
+        }
+        else
+        {
+            <p class="no-results">No actors found matching your search.</p>
+        }
+    </div>
+
+    <!-- GENRES SECTION -->
+    <div class="result-section">
+        <h3>Genres</h3>
+        @if (Model.Genres.Any())
+        {
+            <div class="genres-container">
+                @foreach (var genre in Model.Genres)
+                {
+                    <span class="genre-tag">@genre.Name</span>
+                }
+            </div>
+        }
+        else
+        {
+            <p class="no-results">No genres found matching your search.</p>
+        }
+    </div>
+</div>

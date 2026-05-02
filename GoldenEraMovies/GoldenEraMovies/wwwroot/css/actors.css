@@ -1,93 +1,95 @@
-/* --- STRUCTURA DE BAZA A PAGINII --- */
-body {
-    background-color: gold;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+/* FUNDALUL PAGINII */
+.actors-container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+    text-align: center;
 }
 
 .section-title {
-    text-align: center;
-    font-weight: bold;
-    font-size: 36px;
-    margin-top: 40px;
+    color: #2c2c2c;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-/* --- CONTAINERUL LISTEI DE ACTORI --- */
-.actor-vertical-list {
-    max-width: 700px;          /* Facem caseta putin mai lata ca sa aiba loc poza rotunda si textul */
-    margin: 40px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding-bottom: 50px;
+/* GRILA DE ACTORI (Stil grid ca la filme) */
+.actors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    justify-content: center;
 }
 
-/* --- CASETA INDIVIDUALA A ACTORULUI --- */
-.actor-vertical-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+/* CARDUL INDIVIDUAL (Mai patratos, stil Home) */
+.actor-card {
     background-color: #2c2c2c;
-    border-radius: 20px;
-    padding: 30px;             /* Padding mai mare pentru eleganta */
-    border: 1px solid #444;
+    border: 5px solid #2c2c2c;
+    border-radius: 15px;
+    padding-bottom: 25px;
+    overflow: hidden;
     transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-.actor-vertical-item:hover {
+.actor-card:hover {
+    transform: translateY(-10px);
     border-color: #ffc107;
-    transform: translateY(-5px); /* Se ridica fin cand pui mouse-ul pe caseta */
 }
 
-/* --- POZA ROTUNDA A ACTORULUI (Efect Hall of Fame) --- */
-.actor-round-img {
-    width: 200px;              /* Latimea si inaltimea trebuie sa fie egale pentru un cerc perfect */
-    height: 200px;
-    object-fit: cover;         /* Taie poza perfect fara sa o deformeze */
-    border-radius: 50%;        /* COMANDA MAGICA: transforma patratul in cerc perfect */
-    border: 5px solid #ffc107; /* O rama groasa aurie in jurul portretului */
-    margin-bottom: 25px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+/* IMAGINEA ACTORULUI */
+.actor-card img {
+    width: 100%;
+    height: 400px; /* Inaltime fixa pentru aspect uniform */
+    object-fit: cover;
+    border-bottom: 2px solid rgba(255,193,7,0.1);
 }
 
-/* --- ZONA DE TEXT --- */
-.vertical-content h3 {
+/* CONTINUTUL CARDULUI */
+.actor-card h3 {
     color: white;
-    font-size: 32px;           /* Numele actorului putin mai mare */
-    margin-bottom: 10px;
+    font-size: 22px;
+    margin: 20px 0 10px 0;
 }
 
-/* Detaliile (Rol si Premii) */
-.actor-stats {
-    margin-bottom: 15px;
+.oscar-count {
+    color: #ffc107;
     font-weight: bold;
     font-size: 16px;
+    margin-bottom: 15px;
+    display: block;
 }
 
-.role { 
-    color: #00d4ff;            /* Albastru pentru rol */
-    margin-right: 20px;
-}
-
-.oscars { 
-    color: #ffc107;            /* Auriu pentru Oscaruri */
-}
-
-/* Biografia scurta */
-.actor-description {
+.actor-bio-short {
     color: #ccc;
-    line-height: 1.6;
-    margin-bottom: 25px;
-    font-size: 16px;
-} 
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
-/* SECTIUNEA FOOTER */
-footer {
-    background-color: #2c2c2c;  
-    color: #777;              
-    text-align: center;          /* Centraza continutul in mijlocul barii */
-    margin-top: auto;            /* Absoarbe tot spatiul gol ramas deasupra lui si il forteaza sa se lipeasca de "podeaua" ecranului */
-    border-radius: 50px;         
+/* BUTONUL ("View Biography") - Identic cu cel de la filme */
+.btn-vezi {
+    display: inline-block;
+    background-color: transparent;
+    color: #ffc107;
+    border: 2px solid #ffc107;
+    padding: 8px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+.btn-vezi:hover {
+    background-color: #ffc107;
+    color: black;
+    transform: scale(1.05);
 }

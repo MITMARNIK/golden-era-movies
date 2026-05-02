@@ -1,4 +1,6 @@
-﻿@{
+@model GoldenEraMovies.Models.User
+
+@{
     ViewData["Title"] = "Register";
 }
 
@@ -8,30 +10,24 @@
     <div class="auth-box"> 
         <h2 class="auth-title">Join <span>Golden Era</span></h2>
 
-        <form>
+        <form asp-action="Register" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger" style="margin-bottom: 15px; font-size: 14px;"></div>
+
             <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Choose a username" required>
+                <label asp-for="Username">Username</label>
+                <input asp-for="Username" placeholder="Choose a username" required>
+                <span asp-validation-for="Username" class="text-danger" style="font-size: 12px; color: #ff4444; display: block; margin-top: 5px;"></span>
             </div>
 
             <div class="input-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
+                <label asp-for="Password">Password</label>
+                <input asp-for="Password" type="password" placeholder="Choose a password" required>
+                <span asp-validation-for="Password" class="text-danger" style="font-size: 12px; color: #ff4444; display: block; margin-top: 5px;"></span>
             </div>
 
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Choose a password" required>
-            </div>
-
-            <div class="input-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" placeholder="Confirm your password" required>
-            </div>
-
-            <button type="submit" class="auth-choice-btn btn-outline">Create an Account</button>
+            <button type="submit" class="auth-choice-btn btn-outline" style="margin-top: 20px;">Create an Account</button>
         </form>
 
-        <a asp-action="Index" class="back-link-auth">&larr; Back to Choice</a>
+        <a asp-action="Index" class="back-link-auth" style="margin-top: 20px; display: block;">&larr; Back to Choice</a>
     </div>
 </div>

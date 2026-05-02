@@ -1,26 +1,33 @@
 @model IEnumerable<GoldenEraMovies.Models.Actor>
-@{ ViewData["Title"] = "Actors Management"; }
-<h1>Actors Management</h1>
-<p><a asp-action="Create" class="btn btn-primary">Add New Actor</a></p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Full Name</th>
-            <th>Oscar Awards</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach (var item in Model) {
-        <tr>
-            <td>@Html.DisplayFor(modelItem => item.FullName)</td>
-            <td>@Html.DisplayFor(modelItem => item.OscarAwards)</td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ActorId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ActorId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ActorId">Delete</a>
-            </td>
-        </tr>
-    }
-    </tbody>
-</table>
+
+@{
+    ViewData["Title"] = "Golden Era Actors";
+}
+
+<link rel="stylesheet" href="~/css/actors.css" asp-append-version="true" />
+
+<div class="actors-container">
+    <h2 class="section-title">Hall of Fame: Actors</h2>
+    
+    <div class="actors-grid">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var actor in Model)
+            {
+                <div class="actor-card">
+                    <img src="@(string.IsNullOrEmpty(actor.ImagePath) || actor.ImagePath.Contains("null") ? "https://images.placeholders.dev/?width=300&height=450&text=No+Photo&bgColor=%232c2c2c&textColor=%23ffc107" : actor.ImagePath)" alt="@actor.FullName">
+                    <h3>@actor.FullName</h3>
+
+                    <p class="actor-bio-short">@(string.IsNullOrEmpty(actor.Bio) ? "Biography currently unavailable for this Golden Era star." : (actor.Bio.Length > 100 ? actor.Bio.Substring(0, 97) + "..." : actor.Bio))</p>
+                    <a asp-action="Details" asp-route-id="@actor.ActorId" class="btn-vezi">View Biography</a>
+                </div>
+            }
+        }
+        else
+        {
+            <div style="grid-column: 1 / -1; padding: 50px; color: #888;">
+                <p>No actors found in the database. Stay tuned for legendary updates!</p>
+            </div>
+        }
+    </div>
+</div>

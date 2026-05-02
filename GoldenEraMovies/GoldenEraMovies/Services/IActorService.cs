@@ -7,6 +7,7 @@ namespace GoldenEraMovies.Services
     public interface IActorService
     {
         Task<IEnumerable<Actor>> GetAllActorsAsync();
+        Task<IEnumerable<Actor>> GetActorsSortedByNameAsync();
         Task<Actor> GetActorByIdAsync(int id);
         Task AddActorAsync(Actor actor);
         Task UpdateActorAsync(Actor actor);

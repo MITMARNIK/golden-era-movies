@@ -1,4 +1,5 @@
-﻿@{
+@model GoldenEraMovies.Models.User
+@{
     ViewData["Title"] = "My Profile";
 }
 
@@ -6,46 +7,54 @@
 
 <div class="profile-container">
     <div class="profile-header">
-        <div class="profile-avatar">JD</div>
+        <div class="profile-avatar">@Model.Username.Substring(0, 1).ToUpper()</div>
         <div class="profile-info">
-            <h1>John Doe</h1>
-            <p class="user-mail">john.doe@email.com</p>
+            <h1>@Model.Username</h1>
             <div class="user-stats">
-                <span><strong>12</strong> Movies Watched</span>
-                <span><strong>5</strong> Reviews Posted</span>
+                <span><strong>@((ViewBag.RecentWatchlist as List<Movie>)?.Count ?? 0)</strong> Recently Added</span>
             </div>
         </div>
-        <button class="btn-edit">Edit Profile</button>
     </div>
 
     <div class="profile-content">
         <div class="content-section">
-            <h2>Recently Watched</h2>
+            <h2>Recently Added to Watchlist</h2>
             <div class="mini-movie-grid">
-                <div class="mini-card">
-                    <img src="~/Imagini/GodFather.jpg" alt="Movie">
-                    <span>The Godfather</span>
-                </div>
-                <div class="mini-card">
-                    <img src="~/Imagini/CasablancaPoster-Gold.jpg" alt="Movie">
-                    <span>Casablanca</span>
-                </div>
-                <div class="mini-card">
-                    <img src="~/Imagini/12 Angry MAN.jpg" alt="Movie">
-                    <span>12 Angry Men</span>
-                </div>
+                @if (ViewBag.RecentWatchlist != null)
+                {
+                    @foreach (var movie in (List<Movie>)ViewBag.RecentWatchlist)
+                    {
+                        <div class="mini-card">
+                            <img src="@movie.PosterPath" alt="@movie.Title">
+                            <span>@movie.Title</span>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p style="color: #666;">No movies in watchlist yet.</p>
+                }
             </div>
         </div>
 
         <div class="content-section">
             <h2>Account Settings</h2>
             <ul class="settings-list">
-                <li>Change Password <span>&rsaquo;</span></li>
+                <li><a asp-controller="Account" asp-action="ChangePassword" style="color: inherit; text-decoration: none;">Change Password</a> <span>&rsaquo;</span></li>
                 <li>
                     <a asp-controller="Home" asp-action="Watchlist" class="profile-link">Watchlist</a>
                     <span>&rsaquo;</span>
                 </li>
-                <li class="logout">Log Out</li>
+                <li>
+                    <div>
+                        <a asp-controller="Home" asp-action="SyncData" style="color: #ffc107; text-decoration: none; font-weight: bold;">Sync Classics (TMDB)</a>
+                        <br /><small style="color: #888; font-size: 11px;">Last auto-sync: @ViewBag.LastSync</small>
+                    </div>
+                    <span>&rsaquo;</span>
+                </li>
+                <li class="logout">
+                    <a asp-controller="Account" asp-action="Logout" style="color: inherit; text-decoration: none; width: 100%; display: block;">Log Out</a>
+                </li>
             </ul>
         </div>
     </div>
