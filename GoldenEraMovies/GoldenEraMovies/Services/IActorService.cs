@@ -12,5 +12,6 @@ namespace GoldenEraMovies.Services
         Task AddActorAsync(Actor actor);
         Task UpdateActorAsync(Actor actor);
         Task DeleteActorAsync(int id);
+        Task<IEnumerable<Actor>> SearchActorsAsync(string query);
     }
 }

@@ -11,5 +11,6 @@ namespace GoldenEraMovies.Services
         Task AddGenreAsync(Genre genre);
         Task UpdateGenreAsync(Genre genre);
         Task DeleteGenreAsync(int id);
+        Task<IEnumerable<Genre>> SearchGenresAsync(string query);
     }
 }

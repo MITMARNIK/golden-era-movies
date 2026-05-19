@@ -10,5 +10,6 @@ namespace GoldenEraMovies.Repositories
         Task<Movie> GetWithGenreAsync(int id);
         Task<IEnumerable<Movie>> GetTopMoviesByViewsAsync(int count);
         Task<IEnumerable<Movie>> GetTopRatedMoviesAsync(int count);
+        Task<IEnumerable<Movie>> SearchMoviesAsync(string query);
     }
 }

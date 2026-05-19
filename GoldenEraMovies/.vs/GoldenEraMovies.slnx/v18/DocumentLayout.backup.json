@@ -7,20 +7,32 @@
       "RelativeMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|solutionrelative:goldeneramovies\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|d:\\stuff\\facultate an 3\\semestrul 2\\paw\\proiect\\goldeneramovies\\goldeneramovies\\views\\actors\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|solutionrelative:goldeneramovies\\views\\actors\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|d:\\stuff\\facultate an 3\\semestrul 2\\paw\\proiect\\goldeneramovies\\goldeneramovies\\services\\moviesyncservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|solutionrelative:goldeneramovies\\services\\moviesyncservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|d:\\stuff\\facultate an 3\\semestrul 2\\paw\\proiect\\goldeneramovies\\goldeneramovies\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|solutionrelative:goldeneramovies\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|d:\\stuff\\facultate an 3\\semestrul 2\\paw\\proiect\\goldeneramovies\\goldeneramovies\\views\\movies\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|solutionrelative:goldeneramovies\\views\\movies\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|d:\\stuff\\facultate an 3\\semestrul 2\\paw\\proiect\\goldeneramovies\\goldeneramovies\\views\\reviews\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|solutionrelative:goldeneramovies\\views\\reviews\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|d:\\stuff\\facultate an 3\\semestrul 2\\paw\\proiect\\goldeneramovies\\goldeneramovies\\views\\movies\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|solutionrelative:goldeneramovies\\views\\movies\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|d:\\stuff\\facultate an 3\\semestrul 2\\paw\\proiect\\goldeneramovies\\goldeneramovies\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|solutionrelative:goldeneramovies\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|d:\\stuff\\facultate an 3\\semestrul 2\\paw\\proiect\\goldeneramovies\\goldeneramovies\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|solutionrelative:goldeneramovies\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|d:\\stuff\\facultate an 3\\semestrul 2\\paw\\proiect\\goldeneramovies\\goldeneramovies\\views\\actors\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|solutionrelative:goldeneramovies\\views\\actors\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|d:\\stuff\\facultate an 3\\semestrul 2\\paw\\proiect\\goldeneramovies\\goldeneramovies\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -36,14 +48,6 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/GoldenEraMoviesDb/True/SqlTable/dbo.Genres.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|d:\\stuff\\facultate an 3\\semestrul 2\\paw\\proiect\\goldeneramovies\\goldeneramovies\\views\\movies\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|solutionrelative:goldeneramovies\\views\\movies\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|d:\\stuff\\facultate an 3\\semestrul 2\\paw\\proiect\\goldeneramovies\\goldeneramovies\\views\\movies\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|solutionrelative:goldeneramovies\\views\\movies\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|d:\\stuff\\facultate an 3\\semestrul 2\\paw\\proiect\\goldeneramovies\\goldeneramovies\\views\\home\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4AA29C8D-46CC-D9F8-5436-A99FED06B2E3}|GoldenEraMovies\\GoldenEraMovies.csproj|solutionrelative:goldeneramovies\\views\\home\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
@@ -55,8 +59,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MovieSyncService.cs",
+              "DocumentMoniker": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Services\\MovieSyncService.cs",
+              "RelativeDocumentMoniker": "GoldenEraMovies\\Services\\MovieSyncService.cs",
+              "ToolTip": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Services\\MovieSyncService.cs",
+              "RelativeToolTip": "GoldenEraMovies\\Services\\MovieSyncService.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAiwFEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T21:00:06.117Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -65,22 +82,70 @@
               "RelativeDocumentMoniker": "GoldenEraMovies\\Program.cs",
               "ToolTip": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Program.cs",
               "RelativeToolTip": "GoldenEraMovies\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFkAAAAAAAAAAAASwGsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-19T14:45:36.184Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Views\\Actors\\Create.cshtml",
-              "RelativeDocumentMoniker": "GoldenEraMovies\\Views\\Actors\\Create.cshtml",
-              "ToolTip": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Views\\Actors\\Create.cshtml",
-              "RelativeToolTip": "GoldenEraMovies\\Views\\Actors\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Review.cs",
+              "DocumentMoniker": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Models\\Review.cs",
+              "RelativeDocumentMoniker": "GoldenEraMovies\\Models\\Review.cs",
+              "ToolTip": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Models\\Review.cs",
+              "RelativeToolTip": "GoldenEraMovies\\Models\\Review.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T16:12:41.796Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ReviewsController.cs",
+              "DocumentMoniker": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Controllers\\ReviewsController.cs",
+              "RelativeDocumentMoniker": "GoldenEraMovies\\Controllers\\ReviewsController.cs",
+              "ToolTip": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Controllers\\ReviewsController.cs",
+              "RelativeToolTip": "GoldenEraMovies\\Controllers\\ReviewsController.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAqwEIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T15:53:09.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "GoldenEraMovies\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "GoldenEraMovies\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T15:47:11.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Views\\Movies\\Index.cshtml",
+              "RelativeDocumentMoniker": "GoldenEraMovies\\Views\\Movies\\Index.cshtml",
+              "ToolTip": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Views\\Movies\\Index.cshtml",
+              "RelativeToolTip": "GoldenEraMovies\\Views\\Movies\\Index.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-19T14:34:21.19Z"
+              "WhenOpened": "2026-04-01T07:40:55.931Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Views\\Movies\\Details.cshtml",
+              "RelativeDocumentMoniker": "GoldenEraMovies\\Views\\Movies\\Details.cshtml",
+              "ToolTip": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Views\\Movies\\Details.cshtml",
+              "RelativeToolTip": "GoldenEraMovies\\Views\\Movies\\Details.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-01T07:40:36.452Z"
             },
             {
               "$type": "Document",
@@ -96,19 +161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Review.cs",
-              "DocumentMoniker": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Models\\Review.cs",
-              "RelativeDocumentMoniker": "GoldenEraMovies\\Models\\Review.cs",
-              "ToolTip": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Models\\Review.cs",
-              "RelativeToolTip": "GoldenEraMovies\\Models\\Review.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-01T16:12:41.796Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "dbo.Movies.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/GoldenEraMoviesDb/True/SqlTable/dbo.Movies.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/GoldenEraMoviesDb/True/SqlTable/dbo.Movies.sql",
@@ -117,43 +170,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ReviewsController.cs",
-              "DocumentMoniker": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Controllers\\ReviewsController.cs",
-              "RelativeDocumentMoniker": "GoldenEraMovies\\Controllers\\ReviewsController.cs",
-              "ToolTip": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Controllers\\ReviewsController.cs",
-              "RelativeToolTip": "GoldenEraMovies\\Controllers\\ReviewsController.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAqwEIAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-01T15:53:09.502Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "GoldenEraMovies\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "GoldenEraMovies\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-01T15:47:11.605Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Views\\Movies\\Index.cshtml",
-              "RelativeDocumentMoniker": "GoldenEraMovies\\Views\\Movies\\Index.cshtml",
-              "ToolTip": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Views\\Movies\\Index.cshtml",
-              "RelativeToolTip": "GoldenEraMovies\\Views\\Movies\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Views\\Actors\\Create.cshtml",
+              "RelativeDocumentMoniker": "GoldenEraMovies\\Views\\Actors\\Create.cshtml",
+              "ToolTip": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Views\\Actors\\Create.cshtml",
+              "RelativeToolTip": "GoldenEraMovies\\Views\\Actors\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-01T07:40:55.931Z"
+              "WhenOpened": "2026-04-19T14:34:21.19Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "dbo.Reviews.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/GoldenEraMoviesDb/True/SqlTable/dbo.Reviews.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/GoldenEraMoviesDb/True/SqlTable/dbo.Reviews.sql",
@@ -162,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "dbo.Genres.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/GoldenEraMoviesDb/True/SqlTable/dbo.Genres.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/GoldenEraMoviesDb/True/SqlTable/dbo.Genres.sql",
@@ -171,19 +200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Views\\Movies\\Details.cshtml",
-              "RelativeDocumentMoniker": "GoldenEraMovies\\Views\\Movies\\Details.cshtml",
-              "ToolTip": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Views\\Movies\\Details.cshtml",
-              "RelativeToolTip": "GoldenEraMovies\\Views\\Movies\\Details.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-01T07:40:36.452Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Profile.cshtml",
               "DocumentMoniker": "D:\\STUFF\\FACULTATE AN 3\\SEMESTRUL 2\\PAW\\Proiect\\GoldenEraMovies\\GoldenEraMovies\\Views\\Home\\Profile.cshtml",
               "RelativeDocumentMoniker": "GoldenEraMovies\\Views\\Home\\Profile.cshtml",

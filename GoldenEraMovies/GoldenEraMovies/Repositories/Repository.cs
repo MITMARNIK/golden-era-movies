@@ -18,6 +18,8 @@ namespace GoldenEraMovies.Repositories
 
         public async Task<IEnumerable<T>> GetAllAsync() => await _dbSet.ToListAsync();
         public async Task<T> GetByIdAsync(int id) => await _dbSet.FindAsync(id);
+        public async Task<IEnumerable<T>> FindAsync(System.Linq.Expressions.Expression<System.Func<T, bool>> predicate) => await _dbSet.Where(predicate).ToListAsync();
+        public async Task<T> FirstOrDefaultAsync(System.Linq.Expressions.Expression<System.Func<T, bool>> predicate) => await _dbSet.FirstOrDefaultAsync(predicate);
         public async Task AddAsync(T entity) { await _dbSet.AddAsync(entity); await _context.SaveChangesAsync(); }
         public async Task UpdateAsync(T entity) { _dbSet.Update(entity); await _context.SaveChangesAsync(); }
         public async Task DeleteAsync(int id)

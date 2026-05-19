@@ -5,22 +5,42 @@ using GoldenEraMovies.Models;
 using GoldenEraMovies.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 
 namespace GoldenEraMovies.Controllers
 {
     public class HomeController : Controller
     {
         private readonly IMovieService _movieService;
-        private readonly ApplicationDbContext _context;
+        private readonly IActorService _actorService;
+        private readonly IGenreService _genreService;
+        private readonly IUserService _userService;
+        private readonly IWatchlistService _watchlistService;
         private readonly IMovieSyncService _syncService;
         private readonly IServiceProvider _serviceProvider;
+        private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
 
-        public HomeController(IMovieService movieService, ApplicationDbContext context, IMovieSyncService syncService, IServiceProvider serviceProvider) 
+        public HomeController(
+            IMovieService movieService, 
+            IActorService actorService,
+            IGenreService genreService,
+            IUserService userService,
+            IWatchlistService watchlistService,
+            IMovieSyncService syncService, 
+            IServiceProvider serviceProvider,
+            UserManager<User> userManager,
+            SignInManager<User> signInManager) 
         { 
             _movieService = movieService; 
-            _context = context;
+            _actorService = actorService;
+            _genreService = genreService;
+            _userService = userService;
+            _watchlistService = watchlistService;
             _syncService = syncService;
             _serviceProvider = serviceProvider;
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         public async Task<IActionResult> SyncData()
@@ -63,22 +83,16 @@ namespace GoldenEraMovies.Controllers
 
         public async Task<IActionResult> Profile()
         {
-            var userId = HttpContext.Session.GetInt32("UserId");
-            if (userId == null)
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
             {
                 return RedirectToAction("Index", "Account");
             }
-
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserId == userId);
+            
+            var userId = user.Id;
             
             // Preluam ultimele 3 filme adaugate in watchlist
-            ViewBag.RecentWatchlist = await _context.Watchlists
-                .Where(w => w.UserId == userId)
-                .OrderByDescending(w => w.AddedAt)
-                .Take(3)
-                .Include(w => w.Movie)
-                .Select(w => w.Movie)
-                .ToListAsync();
+            ViewBag.RecentWatchlist = await _watchlistService.GetRecentWatchlistMoviesAsync(userId, 3);
 
             ViewBag.LastSync = SyncState.LastSyncTime == DateTime.MinValue ? "Never" : SyncState.LastSyncTime.ToString("HH:mm:ss");
             return View(user);
@@ -86,16 +100,92 @@ namespace GoldenEraMovies.Controllers
 
         public async Task<IActionResult> Watchlist()
         {
-            var userId = HttpContext.Session.GetInt32("UserId");
-            if (userId == null) return RedirectToAction("Index", "Account");
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return RedirectToAction("Index", "Account");
 
-            var watchlistMovies = await _context.Watchlists
-                .Where(w => w.UserId == userId)
-                .Include(w => w.Movie)
-                .Select(w => w.Movie)
-                .ToListAsync();
+            var watchlistMovies = await _watchlistService.GetUserWatchlistMoviesAsync(user.Id);
 
             return View(watchlistMovies);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> EditProfile()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return RedirectToAction("Index", "Account");
+
+            var model = new EditProfileViewModel
+            {
+                UserName = user.UserName,
+                ProfilePictureUrl = user.ProfilePictureUrl
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditProfile(EditProfileViewModel model)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return RedirectToAction("Index", "Account");
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            // Update Username
+            if (user.UserName != model.UserName)
+            {
+                var setUsernameResult = await _userManager.SetUserNameAsync(user, model.UserName);
+                if (!setUsernameResult.Succeeded)
+                {
+                    foreach (var error in setUsernameResult.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                    return View(model);
+                }
+            }
+
+            // Update Profile Picture
+            user.ProfilePictureUrl = model.ProfilePictureUrl;
+            var updateResult = await _userManager.UpdateAsync(user);
+            if (!updateResult.Succeeded)
+            {
+                foreach (var error in updateResult.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+                return View(model);
+            }
+
+            // Password Change Logic (if new password provided)
+            if (!string.IsNullOrEmpty(model.NewPassword))
+            {
+                if (string.IsNullOrEmpty(model.CurrentPassword))
+                {
+                    ModelState.AddModelError("CurrentPassword", "Current password is required to set a new password.");
+                    return View(model);
+                }
+
+                var changePasswordResult = await _userManager.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword);
+                if (!changePasswordResult.Succeeded)
+                {
+                    foreach (var error in changePasswordResult.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                    return View(model);
+                }
+            }
+
+            // Refresh user session so that the updated username/cookie is reflected
+            await _signInManager.RefreshSignInAsync(user);
+
+            TempData["SuccessMessage"] = "Profile updated successfully!";
+            return RedirectToAction("Profile");
         }
 
         public async Task<IActionResult> Search(string query)
@@ -108,16 +198,9 @@ namespace GoldenEraMovies.Controllers
             var model = new SearchViewModel
             {
                 Query = query,
-                Movies = await _context.Movies
-                    .Include(m => m.Genre)
-                    .Where(m => m.Title.Contains(query) || (m.Genre != null && m.Genre.Name.Contains(query)))
-                    .ToListAsync(),
-                Actors = await _context.Actors
-                    .Where(a => a.FullName.Contains(query))
-                    .ToListAsync(),
-                Genres = await _context.Genres
-                    .Where(g => g.Name.Contains(query))
-                    .ToListAsync()
+                Movies = (await _movieService.SearchMoviesAsync(query)).ToList(),
+                Actors = (await _actorService.SearchActorsAsync(query)).ToList(),
+                Genres = (await _genreService.SearchGenresAsync(query)).ToList()
             };
 
             return View(model);

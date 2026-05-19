@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -12,9 +12,9 @@ namespace GoldenEraMovies.Models
         [Required]
         public string Title { get; set; }
 
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
-        public string PosterPath { get; set; }
+        public string? PosterPath { get; set; }
 
         public decimal AverageRating { get; set; }
 

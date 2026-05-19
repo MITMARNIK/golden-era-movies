@@ -1,0 +1,227 @@
+@model IEnumerable<GoldenEraMovies.Models.UserListViewModel>
+
+@{
+    ViewData["Title"] = "User Role Management Dashboard";
+}
+
+<style>
+    .admin-container {
+        max-width: 1200px;
+        margin: 60px auto;
+        background: rgba(30, 30, 30, 0.6);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 215, 0, 0.15);
+        border-radius: 20px;
+        padding: 45px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .admin-title {
+        color: #ffc107;
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        border-bottom: 2px solid rgba(255, 215, 0, 0.15);
+        padding-bottom: 15px;
+        letter-spacing: 0.5px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .alert-box {
+        padding: 15px 20px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        font-weight: 600;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .alert-success-custom {
+        background: rgba(40, 167, 69, 0.15);
+        border: 1px solid rgba(40, 167, 69, 0.4);
+        color: #28a745;
+    }
+
+    .alert-danger-custom {
+        background: rgba(220, 53, 69, 0.15);
+        border: 1px solid rgba(220, 53, 69, 0.4);
+        color: #dc3545;
+    }
+
+    .users-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    .users-table th {
+        background: rgba(255, 215, 0, 0.08);
+        color: #ffc107;
+        font-weight: 600;
+        text-align: left;
+        padding: 18px;
+        font-size: 16px;
+        border-bottom: 2px solid rgba(255, 215, 0, 0.15);
+    }
+
+    .users-table td {
+        padding: 18px;
+        color: #ddd;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        font-size: 15px;
+        vertical-align: middle;
+    }
+
+    .users-table tr:hover {
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    .user-avatar-circle {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .user-avatar-placeholder {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #222;
+        color: #ffc107;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 16px;
+        border: 2px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .role-badge {
+        display: inline-block;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .role-admin {
+        background: rgba(255, 193, 7, 0.15);
+        border: 1px solid rgba(255, 193, 7, 0.4);
+        color: #ffc107;
+    }
+
+    .role-user {
+        background: rgba(108, 117, 125, 0.15);
+        border: 1px solid rgba(108, 117, 125, 0.4);
+        color: #adb5bd;
+    }
+
+    .action-select {
+        background: #1a1a1a;
+        border: 1px solid rgba(255, 215, 0, 0.3);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .action-select:focus {
+        border-color: #ffc107;
+        outline: none;
+    }
+
+    .btn-update-role {
+        background: #ffc107;
+        color: black;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn-update-role:hover {
+        background: white;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+</style>
+
+<div class="admin-container">
+    <h1 class="admin-title">⚙️ User Role Management Dashboard</h1>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert-box alert-success-custom">
+            <span>✅ @TempData["SuccessMessage"]</span>
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert-box alert-danger-custom">
+            <span>⚠️ @TempData["ErrorMessage"]</span>
+        </div>
+    }
+
+    <div style="overflow-x: auto;">
+        <table class="users-table">
+            <thead>
+                <tr>
+                    <th>Avatar</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Current Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>
+                            @if (!string.IsNullOrEmpty(user.ProfilePictureUrl))
+                            {
+                                <img src="@user.ProfilePictureUrl" alt="Avatar @user.Username" class="user-avatar-circle" />
+                            }
+                            else
+                            {
+                                <div class="user-avatar-placeholder">
+                                    @user.Username.Substring(0, Math.Min(2, user.Username.Length)).ToUpper()
+                                </div>
+                            }
+                        </td>
+                        <td style="font-weight: bold; color: white;">@user.Username</td>
+                        <td>@user.Email</td>
+                        <td>
+                            <span class="role-badge @(user.Role == "Admin" ? "role-admin" : "role-user")">
+                                @user.Role
+                            </span>
+                        </td>
+                        <td>
+                            <form asp-controller="Admin" asp-action="ChangeRole" method="post" style="display: flex; gap: 10px; align-items: center;">
+                                <input type="hidden" name="userId" value="@user.UserId" />
+                                <select name="newRole" class="action-select">
+                                    <!option value="User" @(user.Role == "User" ? "selected" : "")>Standard User</!option>
+                                    <!option value="Admin" @(user.Role == "Admin" ? "selected" : "")>Administrator</!option>
+                                </select>
+                                <button type="submit" class="btn-update-role">Update</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

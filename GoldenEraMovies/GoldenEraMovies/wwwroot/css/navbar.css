@@ -1,12 +1,15 @@
-﻿/* CONTAINERUL PRINCIPAL (Forma barei de meniu) */
+/* CONTAINERUL PRINCIPAL (Forma barei de meniu) */
 .custom-navbar {
     background-color: #2c2c2c; /* coloreaza bara in gri */
     border-radius: 50px; /* capetele rotunde ale navbar */
-    padding: 10px 30px; /* Spatiul gol pe dinauntru: 10px sus-jos, 30px in laterale */
-    display: flex; /* Leaga toate butoanele impreuna si le pune sa stea pe acelasi rand orizontal */
-    justify-content: center; /* Impinge toata butoanele fix pe centrul barei (stanga-dreapta) */
-    list-style: none; /* Ascunde bulinele negre, default de la liste */
-    margin: 10px 10px; /* Ia toata bara si o centreaza perfect pe mijlocul ecranului */
+    padding: 0 20px; /* Fără padding vertical, îl lasă să se adapteze la conținut */
+    display: flex; /* Leaga toate butoanele impreuna */
+    align-items: center; /* Aliniază totul perfect pe centru vertical */
+    justify-content: center; /* Centreaza butoanele pe orizontala */
+    list-style: none;
+    margin: 10px auto; /* Centreaza bara in pagina */
+    max-width: 98%; /* Previne extinderea in afara ecranului */
+    flex-wrap: wrap; /* Daca ecranul e prea mic, arunca elementele pe urmatorul rand */
 }
 
 html {
@@ -15,34 +18,38 @@ html {
 
 /* LINIA DE DESPARTIRE DINTRE BUTOANE */
 .custom-navbar li {
-    border-right: 1px solid #555; /* Trage o dunga subtire in partea dreapta a fiecarui buton, ca sa le separe */
+    border-right: 1px solid #555;
+    display: flex;
+    align-items: center;
 }
 
-    /* ULTIMUL BUTON DIN LISTA */
-    .custom-navbar li:last-child {
-        border-right: none; /* Ii zice ultimului buton:tu nu primi dunga in dreapta */
-    }
+/* ULTIMELE ELEMENTE FARA LINIE */
+.custom-navbar li:last-child, .custom-navbar li.search-item {
+    border-right: none;
+}
 
 /* STILUL TEXTULUI SI AL LINK-URILOR (Butoanele in sine) */
-.custom-navbar a {
-    color: gold; /* Coloreaza literele in acel galben-auriu de cinema */
-    text-decoration: none; /* Scoate dunga aia albastra, urata, care apare mereu sub link-uri */
-    text-align: center; /* Forteaza literele sa stea pe centrul cutiei lor */
-    padding: 1px 70px; /* Lasa spatiu in jurul cuvintelor: un pic sus-jos si mai mult stanga-dreapta*/
-    font-weight: bold; /* Ingroasa textul ca sa iasa in evidenta */
-    transition: 0.3s; /* Face ca schimbarea de culoare la hover sa fie fina (dureaza 0.3 secunde) */
-    /* SECTIUNEA PENTRU CENTRAREA TEXTULUI */
-    display: flex; /* Il transforma intr-o "cutie inteligenta" care stie sa isi alinieze continutul */
-    align-items: center; /* impinge textul fix la mijloc, pe verticala (sus-jos) */
-    height: 100%; /* Ii zice link-ului sa se intinda si sa ocupe toata inaltimea posibila din interiorul barei */
+.custom-navbar a, .custom-navbar .nav-link-btn {
+    color: gold;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px 45px; /* Am mărit de la 25px la 45px pentru a le dispersa mai mult */
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    border-radius: 50px; /* Asigură marginile rotunde chiar și fără hover */
+    background-color: transparent; /* Permite background-ului de hover să funcționeze */
+    border: none;
+    cursor: pointer;
 }
 
-    /* EFECTUL CAND PUI MOUSE-UL PE BUTON (Hover) */
-    .custom-navbar a:hover {
-        color: white; /* Cand pui mouse-ul pe el, textul galben devine alb */
-        background-color: #444; /* In spatele literelor apare acel fundal gri deschis */
-        border-radius: 50px; /* Face ca colturile butoanelor sa fie rotunde */
-    }
+/* EFECTUL CAND PUI MOUSE-UL PE BUTON (Hover) */
+.custom-navbar a:hover, .custom-navbar .nav-link-btn:hover {
+    color: white;
+    background-color: #444; /* Gri deschis */
+}
 
 /* IMAGINEA LOGO-ULUI */
 .navbar-logo img {

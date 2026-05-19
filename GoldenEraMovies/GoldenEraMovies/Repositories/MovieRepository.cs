@@ -21,5 +21,10 @@ namespace GoldenEraMovies.Repositories
 
         public async Task<IEnumerable<Movie>> GetTopRatedMoviesAsync(int count) => 
             await _dbSet.OrderByDescending(m => m.AverageRating).Take(count).ToListAsync();
+
+        public async Task<IEnumerable<Movie>> SearchMoviesAsync(string query) =>
+            await _dbSet.Include(m => m.Genre)
+                .Where(m => m.Title.Contains(query) || (m.Genre != null && m.Genre.Name.Contains(query)))
+                .ToListAsync();
     }
 }

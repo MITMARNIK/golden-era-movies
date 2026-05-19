@@ -1,30 +1,52 @@
 @model GoldenEraMovies.Models.Actor
-@{ ViewData["Title"] = "Add Actor"; }
-<h1>Add Actor</h1>
-<div class="row">
-    <div class="col-md-6">
-        <form asp-action="Create">
-            <div class="form-group">
-                <label asp-for="FullName" class="control-label"></label>
-                <input asp-for="FullName" class="form-control" />
-                <span asp-validation-for="FullName" class="text-danger"></span>
+
+@{
+    ViewData["Title"] = "Add Actor";
+}
+
+<link rel="stylesheet" href="~/css/LoginRegister.css" />
+
+<div class="auth-page-wrapper">
+    <div class="auth-box" style="max-width: 600px;">
+        <h2 class="auth-title" style="margin-bottom: 20px;">Add Actor</h2>
+        
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger" style="color: red; font-size: 0.9em; margin-bottom: 15px; text-align: left;"></div>
+            
+            <div class="input-group">
+                <input asp-for="FullName" required placeholder=" " />
+                <label asp-for="FullName">Full Name</label>
+                <span asp-validation-for="FullName" class="text-danger" style="color: red; font-size: 0.8em; display:block; margin-top:5px; text-align: left;"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="ImagePath" class="control-label">Image URL</label>
-                <input asp-for="ImagePath" class="form-control" />
+            
+            <div class="input-group">
+                <input asp-for="ImagePath" placeholder=" " />
+                <label asp-for="ImagePath">Image URL (optional)</label>
+                <span asp-validation-for="ImagePath" class="text-danger" style="color: red; font-size: 0.8em; display:block; margin-top:5px; text-align: left;"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="OscarAwards" class="control-label"></label>
-                <input asp-for="OscarAwards" class="form-control" type="number" />
+            
+            <div class="input-group">
+                <input asp-for="OscarAwards" required placeholder=" " type="number" />
+                <label asp-for="OscarAwards">Oscar Awards</label>
+                <span asp-validation-for="OscarAwards" class="text-danger" style="color: red; font-size: 0.8em; display:block; margin-top:5px; text-align: left;"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Bio" class="control-label"></label>
-                <textarea asp-for="Bio" class="form-control" rows="3"></textarea>
+
+            <div class="input-group">
+                <textarea asp-for="Bio" required placeholder=" " style="width: 100%; padding: 16px 20px; background-color: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; color: white; font-size: 16px; transition: all 0.3s ease; box-sizing: border-box; resize: vertical; min-height: 100px; font-family: inherit;"></textarea>
+                <span asp-validation-for="Bio" class="text-danger" style="color: red; font-size: 0.8em; display:block; margin-top:5px; text-align: left;"></span>
             </div>
-            <div class="form-group mt-3">
-                <input type="submit" value="Save" class="btn btn-success" />
-                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+
+            <button type="submit" class="auth-choice-btn btn-solid">
+                Save Actor
+            </button>
+            
+            <div style="margin-top: 20px;">
+                <a asp-action="Index" class="back-link-auth">Back to List</a>
             </div>
         </form>
     </div>
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

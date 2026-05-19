@@ -1,0 +1,32 @@
+@using Microsoft.AspNetCore.Identity
+@using GoldenEraMovies.Models
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    var user = await UserManager.GetUserAsync(User);
+    <li>
+        <a asp-controller="Home" asp-action="Profile" title="Manage" style="display: flex; align-items: center; gap: 8px;">
+            @if (!string.IsNullOrEmpty(user?.ProfilePictureUrl))
+            {
+                <img src="@user.ProfilePictureUrl" alt="Profile" style="width: 25px; height: 25px; border-radius: 50%; object-fit: cover; border: 1px solid #c5a85c;" />
+            }
+            Profile
+        </a>
+    </li>
+    <li>
+        <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" style="display:inline; margin:0; padding:0;">
+            <button type="submit" class="nav-link-btn" style="margin:0; font-family: inherit;">Logout</button>
+        </form>
+    </li>
+}
+else
+{
+    <li>
+        <a asp-area="Identity" asp-page="/Account/Register">Register</a>
+    </li>
+    <li>
+        <a asp-area="Identity" asp-page="/Account/Login">Login</a>
+    </li>
+}

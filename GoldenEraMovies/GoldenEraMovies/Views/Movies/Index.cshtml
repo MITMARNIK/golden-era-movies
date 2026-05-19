@@ -7,6 +7,13 @@
 <link rel="stylesheet" href="~/css/movies.css" asp-append-version="true" />
 
 <div class="movie-list">
+    @if (User.IsInRole("Admin"))
+    {
+        <div style="text-align: center; margin-bottom: 20px;">
+            <a asp-action="Create" class="btn-vezi" style="background: linear-gradient(135deg, #28a745 0%, #218838 100%); width: auto; padding: 10px 20px; display: inline-block;">+ Add Movie</a>
+        </div>
+    }
+
     @foreach (var item in Model)
     {
         <div class="movie-list-item">
@@ -17,6 +24,13 @@
                 <p class="movie-desc">@(string.IsNullOrEmpty(item.Description) ? "Description currently unavailable for this classic masterpiece." : item.Description)</p>
             </div>
             <a asp-action="Details" asp-route-id="@item.MovieId" class="btn-vezi">View Details</a>
+            
+            @if (User.IsInRole("Admin"))
+            {
+                <form asp-action="Delete" asp-route-id="@item.MovieId" method="post" style="margin-top: 10px;" onsubmit="return confirm('Are you sure you want to delete this movie?');">
+                    <button type="submit" class="btn-vezi" style="background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); width: 100%; border: none; cursor: pointer;">Delete Movie</button>
+                </form>
+            }
         </div>
     }
 

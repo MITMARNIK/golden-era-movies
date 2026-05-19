@@ -33,12 +33,18 @@ namespace GoldenEraMovies.Controllers
         }
         
         [HttpPost][ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ReviewId,CommentText,StarRating,CreatedAt,MovieId,UserId")] Review review) 
+        public async Task<IActionResult> Create([Bind("ReviewId,CommentText,StarRating,MovieId")] Review review) 
         { 
             ModelState.Remove("Movie"); 
-            if (ModelState.IsValid) { review.CreatedAt = DateTime.Now; await _reviewService.AddReviewAsync(review); return RedirectToAction(nameof(Index)); } 
-            var movies = await _movieService.GetAllMoviesAsync();
-            ViewData["MovieId"] = new SelectList(movies, "MovieId", "Title", review.MovieId); return View(review); 
+            ModelState.Remove("UserId");
+            if (ModelState.IsValid) 
+            { 
+                review.UserId = User.Identity.IsAuthenticated ? User.Identity.Name : "Anonymous";
+                review.CreatedAt = DateTime.Now; 
+                await _reviewService.AddReviewAsync(review); 
+                return RedirectToAction("Details", "Movies", new { id = review.MovieId }); 
+            } 
+            return RedirectToAction("Details", "Movies", new { id = review.MovieId }); 
         }
         
         public async Task<IActionResult> Edit(int? id) 
@@ -56,12 +62,24 @@ namespace GoldenEraMovies.Controllers
         { 
             if (id != review.ReviewId) return NotFound(); 
             ModelState.Remove("Movie"); 
-            if (ModelState.IsValid) { await _reviewService.UpdateReviewAsync(review); return RedirectToAction(nameof(Index)); } 
-            var movies = await _movieService.GetAllMoviesAsync();
-            ViewData["MovieId"] = new SelectList(movies, "MovieId", "Title", review.MovieId); return View(review); 
+            if (ModelState.IsValid) 
+            { 
+                await _reviewService.UpdateReviewAsync(review); 
+                return RedirectToAction("Details", "Movies", new { id = review.MovieId }); 
+            } 
+            return RedirectToAction("Details", "Movies", new { id = review.MovieId }); 
         }
         
         [HttpPost, ActionName("Delete")][ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id) { await _reviewService.DeleteReviewAsync(id); return RedirectToAction(nameof(Index)); }
+        public async Task<IActionResult> DeleteConfirmed(int id) 
+        { 
+            var review = await _reviewService.GetReviewByIdAsync(id);
+            if (review != null)
+            {
+                await _reviewService.DeleteReviewAsync(id); 
+                return RedirectToAction("Details", "Movies", new { id = review.MovieId }); 
+            }
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

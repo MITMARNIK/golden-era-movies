@@ -1,0 +1,64 @@
+@model GoldenEraMovies.Models.EditProfileViewModel
+
+@{
+    ViewData["Title"] = "Edit Profile";
+}
+
+<link rel="stylesheet" href="~/css/LoginRegister.css" />
+
+<div class="auth-page-wrapper">
+    <div class="auth-box" style="max-width: 600px;">
+        <h2 class="auth-title" style="margin-bottom: 20px;">Edit Profile</h2>
+        
+        <form asp-action="EditProfile" method="post">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="text-danger" style="color: red; font-size: 0.9em; margin-bottom: 15px; text-align: left;"></div>
+            
+            <h3 style="color: #c5a85c; font-size: 1.1em; text-align: left; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px;">General Info</h3>
+
+            <div class="input-group">
+                <input asp-for="UserName" required placeholder=" " />
+                <label asp-for="UserName">Username</label>
+                <span asp-validation-for="UserName" class="text-danger" style="color: red; font-size: 0.8em; display:block; margin-top:5px; text-align: left;"></span>
+            </div>
+            
+            <div class="input-group">
+                <input asp-for="ProfilePictureUrl" placeholder=" " />
+                <label asp-for="ProfilePictureUrl">Profile Picture URL</label>
+                <span asp-validation-for="ProfilePictureUrl" class="text-danger" style="color: red; font-size: 0.8em; display:block; margin-top:5px; text-align: left;"></span>
+            </div>
+
+            <h3 style="color: #c5a85c; font-size: 1.1em; text-align: left; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px;">Change Password (optional)</h3>
+
+            <div class="input-group">
+                <input asp-for="CurrentPassword" type="password" placeholder=" " />
+                <label asp-for="CurrentPassword">Current Password</label>
+                <span asp-validation-for="CurrentPassword" class="text-danger" style="color: red; font-size: 0.8em; display:block; margin-top:5px; text-align: left;"></span>
+            </div>
+
+            <div class="input-group">
+                <input asp-for="NewPassword" type="password" placeholder=" " />
+                <label asp-for="NewPassword">New Password</label>
+                <span asp-validation-for="NewPassword" class="text-danger" style="color: red; font-size: 0.8em; display:block; margin-top:5px; text-align: left;"></span>
+            </div>
+
+            <div class="input-group">
+                <input asp-for="ConfirmPassword" type="password" placeholder=" " />
+                <label asp-for="ConfirmPassword">Confirm New Password</label>
+                <span asp-validation-for="ConfirmPassword" class="text-danger" style="color: red; font-size: 0.8em; display:block; margin-top:5px; text-align: left;"></span>
+            </div>
+
+            <button type="submit" class="auth-choice-btn btn-solid" style="margin-top: 25px;">
+                Save Changes
+            </button>
+            
+            <div style="margin-top: 20px;">
+                <a asp-action="Profile" class="back-link-auth">Back to Profile</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

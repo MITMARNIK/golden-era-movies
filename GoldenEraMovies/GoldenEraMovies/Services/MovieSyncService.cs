@@ -6,7 +6,7 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using GoldenEraMovies.Models;
-using Microsoft.EntityFrameworkCore;
+using GoldenEraMovies.Repositories;
 using System.Text.Json.Serialization;
 
 namespace GoldenEraMovies.Services
@@ -14,14 +14,26 @@ namespace GoldenEraMovies.Services
     public class MovieSyncService : IMovieSyncService
     {
         private readonly HttpClient _httpClient;
-        private readonly ApplicationDbContext _context;
+        private readonly IMovieRepository _movieRepo;
+        private readonly IRepository<Genre> _genreRepo;
+        private readonly IRepository<Actor> _actorRepo;
+        private readonly IRepository<MovieActor> _movieActorRepo;
         private readonly string _apiKey;
         private readonly string _baseUrl;
 
-        public MovieSyncService(HttpClient httpClient, ApplicationDbContext context, IConfiguration configuration)
+        public MovieSyncService(
+            HttpClient httpClient, 
+            IMovieRepository movieRepo,
+            IRepository<Genre> genreRepo,
+            IRepository<Actor> actorRepo,
+            IRepository<MovieActor> movieActorRepo,
+            IConfiguration configuration)
         {
             _httpClient = httpClient;
-            _context = context;
+            _movieRepo = movieRepo;
+            _genreRepo = genreRepo;
+            _actorRepo = actorRepo;
+            _movieActorRepo = movieActorRepo;
             _apiKey = configuration["TMDB:ApiKey"];
             _baseUrl = configuration["TMDB:BaseUrl"];
         }
@@ -43,26 +55,25 @@ namespace GoldenEraMovies.Services
 
                 foreach (var tmdbMovie in response.Results.Take(15)) // Marim putin numarul de filme
                 {
-                    var movie = await _context.Movies.FirstOrDefaultAsync(m => m.Title == tmdbMovie.Title);
+                    var movie = await _movieRepo.FirstOrDefaultAsync(m => m.Title == tmdbMovie.Title);
                     bool isNew = false;
 
                     var detailsUrl = $"{_baseUrl}movie/{tmdbMovie.Id}?api_key={_apiKey}&language=en-US";
                     var details = await _httpClient.GetFromJsonAsync<TMDBMovieDetails>(detailsUrl);
 
                     var genreName = details?.Genres?.FirstOrDefault()?.Name ?? "Classic";
-                    var genre = await _context.Genres.FirstOrDefaultAsync(g => g.Name == genreName);
+                    var genre = await _genreRepo.FirstOrDefaultAsync(g => g.Name == genreName);
                     if (genre == null)
                     {
                         genre = new Genre { Name = genreName };
-                        _context.Genres.Add(genre);
-                        await _context.SaveChangesAsync();
+                        await _genreRepo.AddAsync(genre);
                     }
 
                     if (movie == null)
                     {
                         isNew = true;
-                        movie = new Movie { Title = tmdbMovie.Title, ViewsCount = 0 };
-                        _context.Movies.Add(movie);
+                        movie = new Movie { Title = tmdbMovie.Title, ViewsCount = 0, GenreId = genre.GenreId };
+                        await _movieRepo.AddAsync(movie);
                     }
 
                     // Actualizam campurile
@@ -75,7 +86,7 @@ namespace GoldenEraMovies.Services
                     movie.ViewsCount = (int)(tmdbMovie.Popularity * 100); 
 
                     try {
-                        await _context.SaveChangesAsync();
+                        await _movieRepo.UpdateAsync(movie);
                     } catch (Exception ex) {
                         throw new Exception($"Eroare la salvarea/actualizarea filmului '{movie.Title}': {ex.Message} {ex.InnerException?.Message}");
                     }
@@ -88,7 +99,7 @@ namespace GoldenEraMovies.Services
                     {
                         foreach (var castMember in credits.Cast.Take(5))
                         {
-                            var actor = await _context.Actors.FirstOrDefaultAsync(a => a.FullName == castMember.Name);
+                            var actor = await _actorRepo.FirstOrDefaultAsync(a => a.FullName == castMember.Name);
                             
                             var actorDetailsUrl = $"{_baseUrl}person/{castMember.Id}?api_key={_apiKey}&language=en-US";
                             var actorDetails = await _httpClient.GetFromJsonAsync<TMDBActorDetails>(actorDetailsUrl);
@@ -96,22 +107,22 @@ namespace GoldenEraMovies.Services
                             if (actor == null)
                             {
                                 actor = new Actor { FullName = castMember.Name };
-                                _context.Actors.Add(actor);
+                                await _actorRepo.AddAsync(actor);
                             }
 
                             actor.ImagePath = string.IsNullOrEmpty(castMember.ProfilePath) ? "" : $"https://image.tmdb.org/t/p/w500{castMember.ProfilePath}";
                             actor.Bio = actorDetails?.Biography?.Length > 1000 ? actorDetails.Biography.Substring(0, 997) + "..." : (actorDetails?.Biography ?? (actor.Bio ?? ""));
                             
                             try {
-                                await _context.SaveChangesAsync();
+                                await _actorRepo.UpdateAsync(actor);
                             } catch (Exception ex) {
                                 throw new Exception($"Eroare la salvarea/actualizarea actorului '{actor.FullName}': {ex.Message} {ex.InnerException?.Message}");
                             }
 
-                            var linkExists = await _context.MovieActors.AnyAsync(ma => ma.MovieId == movie.MovieId && ma.ActorId == actor.ActorId);
+                            var linkExists = await _movieActorRepo.FirstOrDefaultAsync(ma => ma.MovieId == movie.MovieId && ma.ActorId == actor.ActorId) != null;
                             if (!linkExists)
                             {
-                                _context.MovieActors.Add(new MovieActor
+                                await _movieActorRepo.AddAsync(new MovieActor
                                 {
                                     MovieId = movie.MovieId,
                                     ActorId = actor.ActorId,
@@ -119,7 +130,6 @@ namespace GoldenEraMovies.Services
                                 });
                             }
                         }
-                        await _context.SaveChangesAsync();
                     }
                     if (isNew) syncedCount++;
                 }

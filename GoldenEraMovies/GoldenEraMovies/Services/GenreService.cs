@@ -14,5 +14,6 @@ namespace GoldenEraMovies.Services
         public async Task AddGenreAsync(Genre genre) => await _repo.AddAsync(genre);
         public async Task UpdateGenreAsync(Genre genre) => await _repo.UpdateAsync(genre);
         public async Task DeleteGenreAsync(int id) => await _repo.DeleteAsync(id);
+        public async Task<IEnumerable<Genre>> SearchGenresAsync(string query) => await _repo.FindAsync(g => g.Name.Contains(query));
     }
 }

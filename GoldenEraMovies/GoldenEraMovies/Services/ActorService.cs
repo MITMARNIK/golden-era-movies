@@ -19,5 +19,6 @@ namespace GoldenEraMovies.Services
         public async Task AddActorAsync(Actor actor) => await _repo.AddAsync(actor);
         public async Task UpdateActorAsync(Actor actor) => await _repo.UpdateAsync(actor);
         public async Task DeleteActorAsync(int id) => await _repo.DeleteAsync(id);
+        public async Task<IEnumerable<Actor>> SearchActorsAsync(string query) => await _repo.FindAsync(a => a.FullName.Contains(query));
     }
 }
